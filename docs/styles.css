@@ -102,6 +102,10 @@ button {
   margin: 18px 0;
 }
 
+.toggle-row-tight {
+  margin: 10px 0 0;
+}
+
 .toggle-btn,
 .unit-button {
   border: 1px solid var(--ink);
@@ -118,6 +122,12 @@ button {
   cursor: pointer;
 }
 
+.toggle-btn-small {
+  min-height: 34px;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+}
+
 .toggle-btn.is-active {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
@@ -126,6 +136,21 @@ button {
 
 .sidebar-panel {
   margin-top: 18px;
+}
+
+.sidebar-summary {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 18px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.sidebar-summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .unit-list,
@@ -186,8 +211,30 @@ button {
   letter-spacing: 0.04em;
 }
 
+.pill-inline {
+  display: inline-flex;
+}
+
 .pill-warn,
 .verification-badge {
+  background: var(--warn-soft);
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+.verification-badge-verified {
+  background: #e2f1e4;
+  border-color: #2f6a3c;
+  color: #1d5129;
+}
+
+.verification-badge-review {
+  background: #fbedd7;
+  border-color: #b77719;
+  color: #7c4d0d;
+}
+
+.verification-badge-unclear {
   background: var(--warn-soft);
   border-color: var(--warn);
   color: var(--warn);
@@ -198,7 +245,7 @@ button {
 }
 
 .main-card {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -230,7 +277,8 @@ button {
   border-bottom: 1px solid var(--ink);
 }
 
-.card-header {
+.card-header,
+.source-header {
   display: flex;
   justify-content: space-between;
   gap: 14px;
@@ -327,9 +375,8 @@ button {
 }
 
 .attack-notes,
-.notes-list,
-.rules-list {
-  margin: 0;
+.notes-list {
+  margin: 8px 0 0;
   padding-left: 20px;
 }
 
@@ -340,6 +387,13 @@ button {
   background: var(--warn-soft);
 }
 
+.verification-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
 .verification-panel h3 {
   margin: 0 0 8px;
   font-family: "Rajdhani", sans-serif;
@@ -347,9 +401,30 @@ button {
   font-size: 1.4rem;
 }
 
-.source-surface img {
+.verification-panel-verified {
+  border-color: #2f6a3c;
+  background: #e2f1e4;
+}
+
+.verification-panel-review {
+  border-color: #b77719;
+  background: #fbedd7;
+}
+
+.verification-panel-unclear {
+  border-color: var(--warn);
+  background: var(--warn-soft);
+}
+
+.source-image-scroll {
+  overflow: auto;
+  max-height: 900px;
+  background: #efe6d7;
+}
+
+.source-image-zoomable {
   display: block;
-  width: 100%;
+  min-width: 100%;
   height: auto;
   background: #efe6d7;
 }
@@ -357,6 +432,12 @@ button {
 .source-copy {
   padding: 14px 20px 20px;
   margin: 0;
+}
+
+.zoom-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .rules-group + .rules-group {
@@ -388,6 +469,72 @@ button {
   text-decoration: none;
 }
 
+.review-compare-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.review-detail-grid {
+  margin-top: 18px;
+}
+
+.review-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.review-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.check-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-field-notes,
+.review-data-table {
+  display: grid;
+  gap: 12px;
+}
+
+.review-note-row,
+.review-data-row {
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.review-note-key,
+.review-data-title {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+}
+
+.review-note-value {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.review-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.review-source-text {
+  grid-column: 1 / -1;
+}
+
 .empty-state {
   padding: 24px;
   border: 1px dashed var(--line);
@@ -407,7 +554,9 @@ button {
     padding: 20px;
   }
 
-  .card-grid {
+  .card-grid,
+  .review-compare-grid,
+  .review-summary-grid {
     grid-template-columns: 1fr;
   }
 

@@ -12,6 +12,9 @@ This reads raw source data from `data/`, copies the original photographed cards 
 
 - `docs/data/manifest.json`
 - `docs/data/catalog.json`
+- `docs/data/verification-report.json`
+
+Raw photographed cards now live under `assets/raw-captures/`. The build reads from that directory by default.
 
 ## Test
 

@@ -1,10 +1,27 @@
 {
   "schemaVersion": 1,
   "title": "Heaven Fall Card Library",
-  "generatedAt": "2026-04-01T20:11:34+00:00",
+  "generatedAt": "2026-04-01T20:33:55+00:00",
   "unitCount": 4,
   "ruleGroupCount": 2,
   "rulesSectionCount": 8,
   "catalogFile": "catalog.json",
-  "assetsRoot": "assets/source-cards"
+  "assetsRoot": "assets/source-cards",
+  "verificationReportFile": "verification-report.json",
+  "verificationSummary": {
+    "statusCounts": {
+      "in_review": 4,
+      "unverified": 0,
+      "verified": 0
+    },
+    "sourceQualityCounts": {
+      "fair": 0,
+      "good": 0,
+      "poor": 4
+    },
+    "unresolvedFieldTotal": 12,
+    "fullyVerifiedCount": 0,
+    "inReviewCount": 4,
+    "unverifiedCount": 0
+  }
 }

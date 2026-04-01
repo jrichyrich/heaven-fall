@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-01T20:33:55+00:00",
+  "summary": {
+    "statusCounts": {
+      "in_review": 4,
+      "unverified": 0,
+      "verified": 0
+    },
+    "sourceQualityCounts": {
+      "fair": 0,
+      "good": 0,
+      "poor": 4
+    },
+    "unresolvedFieldTotal": 12,
+    "fullyVerifiedCount": 0,
+    "inReviewCount": 4,
+    "unverifiedCount": 0
+  },
+  "cards": [
+    {
+      "unitId": "champion",
+      "name": "Champion",
+      "status": "in_review",
+      "statusLabel": "Source unclear",
+      "sourceQuality": "poor",
+      "updatedAt": "2026-04-01T20:30:00+00:00",
+      "unresolvedFieldCount": 3,
+      "unresolvedFields": [
+        "stats[0].value",
+        "defense[1].label",
+        "defense[2].label"
+      ],
+      "progress": {
+        "completed": 3,
+        "total": 5,
+        "percent": 60
+      }
+    },
+    {
+      "unitId": "glaives",
+      "name": "Glaives",
+      "status": "in_review",
+      "statusLabel": "Source unclear",
+      "sourceQuality": "poor",
+      "updatedAt": "2026-04-01T20:30:00+00:00",
+      "unresolvedFieldCount": 3,
+      "unresolvedFields": [
+        "maxPerSquad",
+        "defense[1].label",
+        "attacks[0].atk"
+      ],
+      "progress": {
+        "completed": 3,
+        "total": 5,
+        "percent": 60
+      }
+    },
+    {
+      "unitId": "gunner",
+      "name": "Gunner",
+      "status": "in_review",
+      "statusLabel": "Source unclear",
+      "sourceQuality": "poor",
+      "updatedAt": "2026-04-01T20:30:00+00:00",
+      "unresolvedFieldCount": 1,
+      "unresolvedFields": [
+        "defense[1].label"
+      ],
+      "progress": {
+        "completed": 4,
+        "total": 5,
+        "percent": 80
+      }
+    },
+    {
+      "unitId": "pistollier",
+      "name": "Pistollier",
+      "status": "in_review",
+      "statusLabel": "Source unclear",
+      "sourceQuality": "poor",
+      "updatedAt": "2026-04-01T20:30:00+00:00",
+      "unresolvedFieldCount": 5,
+      "unresolvedFields": [
+        "defense[1].label",
+        "attacks[0].str",
+        "attacks[1].str",
+        "attacks[2].range",
+        "attacks[2].str"
+      ],
+      "progress": {
+        "completed": 3,
+        "total": 5,
+        "percent": 60
+      }
+    }
+  ]
+}

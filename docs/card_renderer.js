@@ -20,6 +20,34 @@
     return value === null || value === undefined || value === "" ? "?" : String(value);
   }
 
+  function verificationTone(verification) {
+    if (!verification) {
+      return "review";
+    }
+    if (verification.status === "verified") {
+      return "verified";
+    }
+    if (verification.sourceQuality === "poor") {
+      return "unclear";
+    }
+    return "review";
+  }
+
+  function verificationLabel(verification) {
+    if (!verification) {
+      return "Needs review";
+    }
+    return verification.statusLabel || (
+      verification.status === "verified" ? "Verified" : (
+        verification.sourceQuality === "poor" ? "Source unclear" : "Needs review"
+      )
+    );
+  }
+
+  function renderTrustBadge(verification, extraClass) {
+    return `<span class="pill verification-badge verification-badge-${escapeHtml(verificationTone(verification))} ${escapeHtml(extraClass || "")}">${escapeHtml(verificationLabel(verification))}</span>`;
+  }
+
   function renderStatGrid(stats) {
     if (!Array.isArray(stats) || !stats.length) {
       return "";
@@ -150,15 +178,20 @@
 
   function renderVerificationPanel(unit) {
     const verification = unit && unit.verification ? unit.verification : null;
-    if (!verification || !verification.hasUnresolvedFields) {
+    if (!verification) {
       return "";
     }
     return `
-      <aside class="verification-panel">
-        <h3>Needs Verification</h3>
-        <p>This transcription still has unresolved fields.</p>
-        ${renderNotesSection("Unresolved Fields", verification.unresolvedFields, "notes-list")}
-        ${renderNotesSection("Capture Notes", verification.notes, "notes-list")}
+      <aside class="verification-panel verification-panel-${escapeHtml(verificationTone(verification))}">
+        <div class="verification-panel-header">
+          <h3>${escapeHtml(verificationLabel(verification))}</h3>
+          ${renderTrustBadge(verification)}
+        </div>
+        <p>Capture quality: <strong>${escapeHtml(displayValue(verification.sourceQuality))}</strong>. Reviewed: <strong>${escapeHtml(displayValue(verification.updatedAt))}</strong>.</p>
+        ${verification.hasUnresolvedFields ? `
+          ${renderNotesSection("Unresolved Fields", verification.unresolvedFields, "notes-list")}
+          ${renderNotesSection("Capture Notes", verification.notes, "notes-list")}
+        ` : "<p>No unresolved fields remain on this card.</p>"}
       </aside>
     `;
   }
@@ -175,7 +208,7 @@
             <h1 class="card-title">${escapeHtml(unit.name)}</h1>
             <div class="pill-row">
               <span class="pill">${escapeHtml(maxLabel)}</span>
-              ${verification.hasUnresolvedFields ? '<span class="verification-badge pill">Needs verification</span>' : ""}
+              ${renderTrustBadge(verification)}
               ${tags.map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`).join("")}
             </div>
           </div>
@@ -189,11 +222,11 @@
           <div class="card-column">
             ${renderStatGrid(unit.stats)}
             ${renderDefenseGrid(unit.defense)}
-            ${renderNotesSection("Unit Notes", unit.rulesText, "notes-list")}
+            ${renderTagSection(unit.tags)}
           </div>
           <div class="card-column">
             ${renderAttacks(unit.attacks)}
-            ${renderTagSection([])}
+            ${renderNotesSection("Unit Notes", unit.rulesText, "notes-list")}
           </div>
         </div>
       </article>
@@ -226,6 +259,9 @@
   return {
     escapeHtml,
     renderDigitalCard,
-    renderRulesGroups
+    renderRulesGroups,
+    verificationLabel,
+    verificationTone,
+    renderTrustBadge
   };
 });

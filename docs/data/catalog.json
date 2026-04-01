@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "Heaven Fall Card Library",
-  "generatedAt": "2026-04-01T20:11:34+00:00",
+  "generatedAt": "2026-04-01T20:33:55+00:00",
   "rules": [
     {
       "id": "core-rules",
@@ -96,39 +96,46 @@
         {
           "key": "w",
           "label": "W",
-          "value": null
+          "value": null,
+          "sourceText": "W ?"
         },
         {
           "key": "m",
           "label": "M",
-          "value": 7
+          "value": 7,
+          "sourceText": "M 7"
         },
         {
           "key": "t",
           "label": "T",
-          "value": 4
+          "value": 4,
+          "sourceText": "T 4"
         },
         {
           "key": "stm",
           "label": "STM",
-          "value": 3
+          "value": 3,
+          "sourceText": "STM 3"
         }
       ],
       "defense": [
         {
           "key": "sv",
           "label": "SV",
-          "value": "3"
+          "value": "3",
+          "sourceText": "SV 3"
         },
         {
           "key": "sv-secondary",
           "label": "SV?",
-          "value": "4+"
+          "value": "4+",
+          "sourceText": "4+"
         },
         {
           "key": "sv-tertiary",
           "label": "SV?",
-          "value": "6+"
+          "value": "6+",
+          "sourceText": "6+"
         }
       ],
       "attacks": [
@@ -141,7 +148,8 @@
           "str": "4",
           "aoe": "1\"",
           "dmg": "2",
-          "notes": []
+          "notes": [],
+          "sourceText": "Master glaive | Atk 5 | Rng 2\" | Hit 3+ | Str 4 | AoE 1\" | Dmg 2"
         }
       ],
       "tags": [
@@ -151,7 +159,10 @@
       "sourceImage": "IMG_1039.JPG",
       "sourceImageUrl": "./assets/source-cards/IMG_1039.JPG",
       "verification": {
-        "status": "needs-verification",
+        "status": "in_review",
+        "statusLabel": "Source unclear",
+        "updatedAt": "2026-04-01T20:30:00+00:00",
+        "sourceQuality": "poor",
         "unresolvedFields": [
           "stats[0].value",
           "defense[1].label",
@@ -161,7 +172,24 @@
           "The wounds value is obscured by the marker pen in the top-left stat row.",
           "The extra defense boxes appear to read 4+ and 6+, but their handwritten meaning is not labeled."
         ],
-        "hasUnresolvedFields": true
+        "fieldNotes": {
+          "stats[0].value": "The handwritten wounds value is overwritten and still unreadable from the current photo.",
+          "defense[1].label": "The 4+ defense box is visible, but its semantic label is not written on the card.",
+          "defense[2].label": "The 6+ defense box is visible, but its semantic label is not written on the card."
+        },
+        "reviewChecklist": {
+          "stats": false,
+          "defense": false,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": true,
+        "progress": {
+          "completed": 3,
+          "total": 5,
+          "percent": 60
+        }
       }
     },
     {
@@ -173,34 +201,40 @@
         {
           "key": "w",
           "label": "W",
-          "value": 4
+          "value": 4,
+          "sourceText": "W 4"
         },
         {
           "key": "m",
           "label": "M",
-          "value": 7
+          "value": 7,
+          "sourceText": "M 7"
         },
         {
           "key": "t",
           "label": "T",
-          "value": 4
+          "value": 4,
+          "sourceText": "T 4"
         },
         {
           "key": "stm",
           "label": "STM",
-          "value": 2
+          "value": 2,
+          "sourceText": "STM 2"
         }
       ],
       "defense": [
         {
           "key": "sv",
           "label": "SV",
-          "value": "3"
+          "value": "3",
+          "sourceText": "SV 3"
         },
         {
           "key": "sv-secondary",
           "label": "SV?",
-          "value": "4+"
+          "value": "4+",
+          "sourceText": "4+"
         }
       ],
       "attacks": [
@@ -215,7 +249,8 @@
           "dmg": "1",
           "notes": [
             "The attack count is difficult to read and should be confirmed against the source card."
-          ]
+          ],
+          "sourceText": "Glaive | Rng 1\" | Hit 3+ | Str 4 | AoE 0\" | Dmg 1 | Atk ?"
         }
       ],
       "tags": [],
@@ -223,7 +258,10 @@
       "sourceImage": "IMG_1041.JPG",
       "sourceImageUrl": "./assets/source-cards/IMG_1041.JPG",
       "verification": {
-        "status": "needs-verification",
+        "status": "in_review",
+        "statusLabel": "Source unclear",
+        "updatedAt": "2026-04-01T20:30:00+00:00",
+        "sourceQuality": "poor",
         "unresolvedFields": [
           "maxPerSquad",
           "defense[1].label",
@@ -233,7 +271,24 @@
           "The source photo does not clearly show a max squad size.",
           "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
         ],
-        "hasUnresolvedFields": true
+        "fieldNotes": {
+          "maxPerSquad": "No max squad value is legible in the current source image.",
+          "defense[1].label": "The 4+ defense box is visible, but its semantic label is not written on the card.",
+          "attacks[0].atk": "The glaive attack count mark is faint and still needs confirmation from a cleaner capture."
+        },
+        "reviewChecklist": {
+          "stats": true,
+          "defense": false,
+          "attacks": false,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": true,
+        "progress": {
+          "completed": 3,
+          "total": 5,
+          "percent": 60
+        }
       }
     },
     {
@@ -245,34 +300,40 @@
         {
           "key": "w",
           "label": "W",
-          "value": 4
+          "value": 4,
+          "sourceText": "W 4"
         },
         {
           "key": "m",
           "label": "M",
-          "value": 7
+          "value": 7,
+          "sourceText": "M 7"
         },
         {
           "key": "t",
           "label": "T",
-          "value": 4
+          "value": 4,
+          "sourceText": "T 4"
         },
         {
           "key": "stm",
           "label": "STM",
-          "value": 2
+          "value": 2,
+          "sourceText": "STM 2"
         }
       ],
       "defense": [
         {
           "key": "sv",
           "label": "SV",
-          "value": "3"
+          "value": "3",
+          "sourceText": "SV 3"
         },
         {
           "key": "sv-secondary",
           "label": "SV?",
-          "value": "4+"
+          "value": "4+",
+          "sourceText": "4+"
         }
       ],
       "attacks": [
@@ -285,7 +346,8 @@
           "str": "8",
           "aoe": "1\"",
           "dmg": "D3",
-          "notes": []
+          "notes": [],
+          "sourceText": "Gun | Rng 18\" | Atk 2 | Hit 3+ | Str 8 | AoE 1\" | Dmg D3"
         },
         {
           "name": "Knife",
@@ -296,7 +358,8 @@
           "str": "3",
           "aoe": "0\"",
           "dmg": "1",
-          "notes": []
+          "notes": [],
+          "sourceText": "Knife | Rng 1\" | Atk 1 | Hit 4+ | Str 3 | AoE 0\" | Dmg 1"
         }
       ],
       "tags": [],
@@ -304,14 +367,32 @@
       "sourceImage": "IMG_1040.JPG",
       "sourceImageUrl": "./assets/source-cards/IMG_1040.JPG",
       "verification": {
-        "status": "needs-verification",
+        "status": "in_review",
+        "statusLabel": "Source unclear",
+        "updatedAt": "2026-04-01T20:30:00+00:00",
+        "sourceQuality": "poor",
         "unresolvedFields": [
           "defense[1].label"
         ],
         "notes": [
           "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
         ],
-        "hasUnresolvedFields": true
+        "fieldNotes": {
+          "defense[1].label": "The secondary defense value is visible, but the box label is missing from the source card."
+        },
+        "reviewChecklist": {
+          "stats": true,
+          "defense": false,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": true,
+        "progress": {
+          "completed": 4,
+          "total": 5,
+          "percent": 80
+        }
       }
     },
     {
@@ -323,34 +404,40 @@
         {
           "key": "w",
           "label": "W",
-          "value": 4
+          "value": 4,
+          "sourceText": "W 4"
         },
         {
           "key": "m",
           "label": "M",
-          "value": 7
+          "value": 7,
+          "sourceText": "M 7"
         },
         {
           "key": "t",
           "label": "T",
-          "value": 4
+          "value": 4,
+          "sourceText": "T 4"
         },
         {
           "key": "stm",
           "label": "STM",
-          "value": 2
+          "value": 2,
+          "sourceText": "STM 2"
         }
       ],
       "defense": [
         {
           "key": "sv",
           "label": "SV",
-          "value": "3"
+          "value": "3",
+          "sourceText": "SV 3"
         },
         {
           "key": "sv-secondary",
           "label": "SV?",
-          "value": "4+"
+          "value": "4+",
+          "sourceText": "4+"
         }
       ],
       "attacks": [
@@ -363,7 +450,8 @@
           "str": null,
           "aoe": "0",
           "dmg": "1",
-          "notes": []
+          "notes": [],
+          "sourceText": "1 pistol | Rng 12\" | Atk 4 | Hit 3+ | AoE 0 | Dmg 1 | Str ?"
         },
         {
           "name": "2 pistol",
@@ -374,7 +462,8 @@
           "str": null,
           "aoe": "0",
           "dmg": "1",
-          "notes": []
+          "notes": [],
+          "sourceText": "2 pistol | Rng 12\" | Atk 4 | Hit 3+ | AoE 0 | Dmg 1 | Str ?"
         },
         {
           "name": "Fists",
@@ -387,7 +476,8 @@
           "dmg": "1",
           "notes": [
             "The melee row is partially obscured in the photo."
-          ]
+          ],
+          "sourceText": "Fists | Atk 2 | Hit 5+ | AoE 0 | Dmg 1 | Rng ? | Str ?"
         }
       ],
       "tags": [],
@@ -395,7 +485,10 @@
       "sourceImage": "IMG_1038.JPG",
       "sourceImageUrl": "./assets/source-cards/IMG_1038.JPG",
       "verification": {
-        "status": "needs-verification",
+        "status": "in_review",
+        "statusLabel": "Source unclear",
+        "updatedAt": "2026-04-01T20:30:00+00:00",
+        "sourceQuality": "poor",
         "unresolvedFields": [
           "defense[1].label",
           "attacks[0].str",
@@ -407,7 +500,26 @@
           "Second defense box appears to read 4+, but the handwritten meaning of that box is not labeled.",
           "The pistol rows do not clearly show a Strength column in the source photo."
         ],
-        "hasUnresolvedFields": true
+        "fieldNotes": {
+          "defense[1].label": "The secondary defense value is visible, but the box label is missing from the source card.",
+          "attacks[0].str": "The first pistol row does not show a legible Strength value in the source image.",
+          "attacks[1].str": "The second pistol row does not show a legible Strength value in the source image.",
+          "attacks[2].range": "The melee fists row is partially cropped, so the range indicator is unclear.",
+          "attacks[2].str": "The melee fists row is partially cropped, so the Strength value is unclear."
+        },
+        "reviewChecklist": {
+          "stats": true,
+          "defense": false,
+          "attacks": false,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": true,
+        "progress": {
+          "completed": 3,
+          "total": 5,
+          "percent": 60
+        }
       }
     }
   ],
@@ -416,5 +528,21 @@
     "glaives": "./assets/source-cards/IMG_1041.JPG",
     "gunner": "./assets/source-cards/IMG_1040.JPG",
     "pistollier": "./assets/source-cards/IMG_1038.JPG"
+  },
+  "verificationSummary": {
+    "statusCounts": {
+      "in_review": 4,
+      "unverified": 0,
+      "verified": 0
+    },
+    "sourceQualityCounts": {
+      "fair": 0,
+      "good": 0,
+      "poor": 4
+    },
+    "unresolvedFieldTotal": 12,
+    "fullyVerifiedCount": 0,
+    "inReviewCount": 4,
+    "unverifiedCount": 0
   }
 }

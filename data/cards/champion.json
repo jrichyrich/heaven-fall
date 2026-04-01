@@ -7,39 +7,46 @@
     {
       "key": "w",
       "label": "W",
-      "value": null
+      "value": null,
+      "sourceText": "W ?"
     },
     {
       "key": "m",
       "label": "M",
-      "value": 7
+      "value": 7,
+      "sourceText": "M 7"
     },
     {
       "key": "t",
       "label": "T",
-      "value": 4
+      "value": 4,
+      "sourceText": "T 4"
     },
     {
       "key": "stm",
       "label": "STM",
-      "value": 3
+      "value": 3,
+      "sourceText": "STM 3"
     }
   ],
   "defense": [
     {
       "key": "sv",
       "label": "SV",
-      "value": "3"
+      "value": "3",
+      "sourceText": "SV 3"
     },
     {
       "key": "sv-secondary",
       "label": "SV?",
-      "value": "4+"
+      "value": "4+",
+      "sourceText": "4+"
     },
     {
       "key": "sv-tertiary",
       "label": "SV?",
-      "value": "6+"
+      "value": "6+",
+      "sourceText": "6+"
     }
   ],
   "attacks": [
@@ -52,7 +59,8 @@
       "str": "4",
       "aoe": "1\"",
       "dmg": "2",
-      "notes": []
+      "notes": [],
+      "sourceText": "Master glaive | Atk 5 | Rng 2\" | Hit 3+ | Str 4 | AoE 1\" | Dmg 2"
     }
   ],
   "tags": [
@@ -61,7 +69,9 @@
   "rulesText": [],
   "sourceImage": "IMG_1039.JPG",
   "verification": {
-    "status": "needs-verification",
+    "status": "in_review",
+    "updatedAt": "2026-04-01T20:30:00+00:00",
+    "sourceQuality": "poor",
     "unresolvedFields": [
       "stats[0].value",
       "defense[1].label",
@@ -70,6 +80,18 @@
     "notes": [
       "The wounds value is obscured by the marker pen in the top-left stat row.",
       "The extra defense boxes appear to read 4+ and 6+, but their handwritten meaning is not labeled."
-    ]
+    ],
+    "fieldNotes": {
+      "stats[0].value": "The handwritten wounds value is overwritten and still unreadable from the current photo.",
+      "defense[1].label": "The 4+ defense box is visible, but its semantic label is not written on the card.",
+      "defense[2].label": "The 6+ defense box is visible, but its semantic label is not written on the card."
+    },
+    "reviewChecklist": {
+      "stats": false,
+      "defense": false,
+      "attacks": true,
+      "tags": true,
+      "rulesText": true
+    }
   }
 }

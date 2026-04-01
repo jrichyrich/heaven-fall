@@ -7,34 +7,40 @@
     {
       "key": "w",
       "label": "W",
-      "value": 4
+      "value": 4,
+      "sourceText": "W 4"
     },
     {
       "key": "m",
       "label": "M",
-      "value": 7
+      "value": 7,
+      "sourceText": "M 7"
     },
     {
       "key": "t",
       "label": "T",
-      "value": 4
+      "value": 4,
+      "sourceText": "T 4"
     },
     {
       "key": "stm",
       "label": "STM",
-      "value": 2
+      "value": 2,
+      "sourceText": "STM 2"
     }
   ],
   "defense": [
     {
       "key": "sv",
       "label": "SV",
-      "value": "3"
+      "value": "3",
+      "sourceText": "SV 3"
     },
     {
       "key": "sv-secondary",
       "label": "SV?",
-      "value": "4+"
+      "value": "4+",
+      "sourceText": "4+"
     }
   ],
   "attacks": [
@@ -49,14 +55,17 @@
       "dmg": "1",
       "notes": [
         "The attack count is difficult to read and should be confirmed against the source card."
-      ]
+      ],
+      "sourceText": "Glaive | Rng 1\" | Hit 3+ | Str 4 | AoE 0\" | Dmg 1 | Atk ?"
     }
   ],
   "tags": [],
   "rulesText": [],
   "sourceImage": "IMG_1041.JPG",
   "verification": {
-    "status": "needs-verification",
+    "status": "in_review",
+    "updatedAt": "2026-04-01T20:30:00+00:00",
+    "sourceQuality": "poor",
     "unresolvedFields": [
       "maxPerSquad",
       "defense[1].label",
@@ -65,6 +74,18 @@
     "notes": [
       "The source photo does not clearly show a max squad size.",
       "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
-    ]
+    ],
+    "fieldNotes": {
+      "maxPerSquad": "No max squad value is legible in the current source image.",
+      "defense[1].label": "The 4+ defense box is visible, but its semantic label is not written on the card.",
+      "attacks[0].atk": "The glaive attack count mark is faint and still needs confirmation from a cleaner capture."
+    },
+    "reviewChecklist": {
+      "stats": true,
+      "defense": false,
+      "attacks": false,
+      "tags": true,
+      "rulesText": true
+    }
   }
 }

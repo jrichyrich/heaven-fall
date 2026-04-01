@@ -7,34 +7,40 @@
     {
       "key": "w",
       "label": "W",
-      "value": 4
+      "value": 4,
+      "sourceText": "W 4"
     },
     {
       "key": "m",
       "label": "M",
-      "value": 7
+      "value": 7,
+      "sourceText": "M 7"
     },
     {
       "key": "t",
       "label": "T",
-      "value": 4
+      "value": 4,
+      "sourceText": "T 4"
     },
     {
       "key": "stm",
       "label": "STM",
-      "value": 2
+      "value": 2,
+      "sourceText": "STM 2"
     }
   ],
   "defense": [
     {
       "key": "sv",
       "label": "SV",
-      "value": "3"
+      "value": "3",
+      "sourceText": "SV 3"
     },
     {
       "key": "sv-secondary",
       "label": "SV?",
-      "value": "4+"
+      "value": "4+",
+      "sourceText": "4+"
     }
   ],
   "attacks": [
@@ -47,7 +53,8 @@
       "str": null,
       "aoe": "0",
       "dmg": "1",
-      "notes": []
+      "notes": [],
+      "sourceText": "1 pistol | Rng 12\" | Atk 4 | Hit 3+ | AoE 0 | Dmg 1 | Str ?"
     },
     {
       "name": "2 pistol",
@@ -58,7 +65,8 @@
       "str": null,
       "aoe": "0",
       "dmg": "1",
-      "notes": []
+      "notes": [],
+      "sourceText": "2 pistol | Rng 12\" | Atk 4 | Hit 3+ | AoE 0 | Dmg 1 | Str ?"
     },
     {
       "name": "Fists",
@@ -71,14 +79,17 @@
       "dmg": "1",
       "notes": [
         "The melee row is partially obscured in the photo."
-      ]
+      ],
+      "sourceText": "Fists | Atk 2 | Hit 5+ | AoE 0 | Dmg 1 | Rng ? | Str ?"
     }
   ],
   "tags": [],
   "rulesText": [],
   "sourceImage": "IMG_1038.JPG",
   "verification": {
-    "status": "needs-verification",
+    "status": "in_review",
+    "updatedAt": "2026-04-01T20:30:00+00:00",
+    "sourceQuality": "poor",
     "unresolvedFields": [
       "defense[1].label",
       "attacks[0].str",
@@ -89,6 +100,20 @@
     "notes": [
       "Second defense box appears to read 4+, but the handwritten meaning of that box is not labeled.",
       "The pistol rows do not clearly show a Strength column in the source photo."
-    ]
+    ],
+    "fieldNotes": {
+      "defense[1].label": "The secondary defense value is visible, but the box label is missing from the source card.",
+      "attacks[0].str": "The first pistol row does not show a legible Strength value in the source image.",
+      "attacks[1].str": "The second pistol row does not show a legible Strength value in the source image.",
+      "attacks[2].range": "The melee fists row is partially cropped, so the range indicator is unclear.",
+      "attacks[2].str": "The melee fists row is partially cropped, so the Strength value is unclear."
+    },
+    "reviewChecklist": {
+      "stats": true,
+      "defense": false,
+      "attacks": false,
+      "tags": true,
+      "rulesText": true
+    }
   }
 }

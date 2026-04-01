@@ -7,34 +7,40 @@
     {
       "key": "w",
       "label": "W",
-      "value": 4
+      "value": 4,
+      "sourceText": "W 4"
     },
     {
       "key": "m",
       "label": "M",
-      "value": 7
+      "value": 7,
+      "sourceText": "M 7"
     },
     {
       "key": "t",
       "label": "T",
-      "value": 4
+      "value": 4,
+      "sourceText": "T 4"
     },
     {
       "key": "stm",
       "label": "STM",
-      "value": 2
+      "value": 2,
+      "sourceText": "STM 2"
     }
   ],
   "defense": [
     {
       "key": "sv",
       "label": "SV",
-      "value": "3"
+      "value": "3",
+      "sourceText": "SV 3"
     },
     {
       "key": "sv-secondary",
       "label": "SV?",
-      "value": "4+"
+      "value": "4+",
+      "sourceText": "4+"
     }
   ],
   "attacks": [
@@ -47,7 +53,8 @@
       "str": "8",
       "aoe": "1\"",
       "dmg": "D3",
-      "notes": []
+      "notes": [],
+      "sourceText": "Gun | Rng 18\" | Atk 2 | Hit 3+ | Str 8 | AoE 1\" | Dmg D3"
     },
     {
       "name": "Knife",
@@ -58,19 +65,32 @@
       "str": "3",
       "aoe": "0\"",
       "dmg": "1",
-      "notes": []
+      "notes": [],
+      "sourceText": "Knife | Rng 1\" | Atk 1 | Hit 4+ | Str 3 | AoE 0\" | Dmg 1"
     }
   ],
   "tags": [],
   "rulesText": [],
   "sourceImage": "IMG_1040.JPG",
   "verification": {
-    "status": "needs-verification",
+    "status": "in_review",
+    "updatedAt": "2026-04-01T20:30:00+00:00",
+    "sourceQuality": "poor",
     "unresolvedFields": [
       "defense[1].label"
     ],
     "notes": [
       "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
-    ]
+    ],
+    "fieldNotes": {
+      "defense[1].label": "The secondary defense value is visible, but the box label is missing from the source card."
+    },
+    "reviewChecklist": {
+      "stats": true,
+      "defense": false,
+      "attacks": true,
+      "tags": true,
+      "rulesText": true
+    }
   }
 }
