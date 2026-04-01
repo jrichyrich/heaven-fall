@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "title": "Heaven Fall Card Library",
+  "generatedAt": "2026-04-01T20:11:34+00:00",
+  "unitCount": 4,
+  "ruleGroupCount": 2,
+  "rulesSectionCount": 8,
+  "catalogFile": "catalog.json",
+  "assetsRoot": "assets/source-cards"
+}

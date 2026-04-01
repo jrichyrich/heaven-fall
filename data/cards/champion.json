@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "unitId": "champion",
+  "name": "Champion",
+  "maxPerSquad": 1,
+  "stats": [
+    {
+      "key": "w",
+      "label": "W",
+      "value": null
+    },
+    {
+      "key": "m",
+      "label": "M",
+      "value": 7
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 4
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 3
+    }
+  ],
+  "defense": [
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "3"
+    },
+    {
+      "key": "sv-secondary",
+      "label": "SV?",
+      "value": "4+"
+    },
+    {
+      "key": "sv-tertiary",
+      "label": "SV?",
+      "value": "6+"
+    }
+  ],
+  "attacks": [
+    {
+      "name": "Master glaive",
+      "kind": "melee",
+      "range": "2\"",
+      "atk": 5,
+      "hit": "3+",
+      "str": "4",
+      "aoe": "1\"",
+      "dmg": "2",
+      "notes": []
+    }
+  ],
+  "tags": [
+    "Leader"
+  ],
+  "rulesText": [],
+  "sourceImage": "IMG_1039.JPG",
+  "verification": {
+    "status": "needs-verification",
+    "unresolvedFields": [
+      "stats[0].value",
+      "defense[1].label",
+      "defense[2].label"
+    ],
+    "notes": [
+      "The wounds value is obscured by the marker pen in the top-left stat row.",
+      "The extra defense boxes appear to read 4+ and 6+, but their handwritten meaning is not labeled."
+    ]
+  }
+}

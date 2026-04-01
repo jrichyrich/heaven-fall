@@ -1,0 +1,418 @@
+:root {
+  --bg: #f1ebdf;
+  --panel: #fbf8f2;
+  --panel-strong: #fffdf8;
+  --ink: #191512;
+  --muted: #6b5e52;
+  --line: #cabda9;
+  --accent: #aa4b28;
+  --accent-2: #d18a2a;
+  --warn: #8f1f2f;
+  --warn-soft: #f7dde1;
+  --tag: #efe1c1;
+  --shadow: 0 18px 40px rgba(61, 36, 12, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(209, 138, 42, 0.2), transparent 22%),
+    radial-gradient(circle at right center, rgba(170, 75, 40, 0.12), transparent 25%),
+    linear-gradient(180deg, #f6f0e5 0%, var(--bg) 100%);
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+.app-loading,
+.app-error {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  font-size: 1.2rem;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+}
+
+.sidebar {
+  padding: 24px;
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(246, 238, 223, 0.95)),
+    linear-gradient(180deg, #f5efe3 0%, #eadfcd 100%);
+}
+
+.brand {
+  margin-bottom: 18px;
+}
+
+.brand-kicker,
+.section-label,
+.meta-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.brand h1,
+.view-title,
+.card-title,
+.section-heading,
+.rules-title {
+  margin: 0;
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+}
+
+.brand h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.9;
+}
+
+.brand p,
+.view-copy,
+.empty-state,
+.source-copy {
+  color: var(--muted);
+}
+
+.toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.toggle-btn,
+.unit-button {
+  border: 1px solid var(--ink);
+  background: var(--panel-strong);
+  color: var(--ink);
+}
+
+.toggle-btn {
+  min-height: 42px;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toggle-btn.is-active {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  border-color: var(--accent);
+}
+
+.sidebar-panel {
+  margin-top: 18px;
+}
+
+.unit-list,
+.rule-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.unit-button {
+  width: 100%;
+  text-align: left;
+  padding: 14px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.unit-button.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 16px 28px rgba(170, 75, 40, 0.18);
+}
+
+.unit-name {
+  display: block;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.unit-meta,
+.rule-list-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.pill,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 1px solid var(--ink);
+  background: var(--tag);
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pill-warn,
+.verification-badge {
+  background: var(--warn-soft);
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+.main {
+  padding: 28px;
+}
+
+.main-card {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 18px;
+}
+
+.view-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 0.9;
+}
+
+.card-surface,
+.rules-surface,
+.source-surface {
+  border: 1px solid var(--ink);
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.card-header,
+.rules-group-header,
+.source-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.card-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 0.9;
+}
+
+.card-meta {
+  text-align: right;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  border-top: 1px solid var(--line);
+}
+
+.card-column + .card-column {
+  border-left: 1px solid var(--line);
+}
+
+.card-section + .card-section {
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  padding: 10px 16px;
+  background: linear-gradient(90deg, rgba(209, 138, 42, 0.18), rgba(170, 75, 40, 0.08));
+  font-size: 1.25rem;
+}
+
+.section-body {
+  padding: 16px;
+}
+
+.chip-grid,
+.defense-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stat-chip,
+.defense-chip {
+  min-width: 84px;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  background: var(--panel-strong);
+}
+
+.chip-label {
+  display: block;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.chip-value {
+  display: block;
+  margin-top: 4px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.attack-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attack-table th,
+.attack-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.attack-table th {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: rgba(209, 138, 42, 0.08);
+}
+
+.attack-name {
+  font-weight: 600;
+}
+
+.attack-notes,
+.notes-list,
+.rules-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.verification-panel {
+  margin: 16px;
+  padding: 14px;
+  border: 1px solid var(--warn);
+  background: var(--warn-soft);
+}
+
+.verification-panel h3 {
+  margin: 0 0 8px;
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.source-surface img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #efe6d7;
+}
+
+.source-copy {
+  padding: 14px 20px 20px;
+  margin: 0;
+}
+
+.rules-group + .rules-group {
+  margin-top: 18px;
+}
+
+.rules-group-header {
+  background: linear-gradient(90deg, rgba(209, 138, 42, 0.18), rgba(170, 75, 40, 0.08));
+}
+
+.rules-title {
+  font-size: 2rem;
+}
+
+.rule-section + .rule-section {
+  border-top: 1px solid var(--line);
+}
+
+.rule-section-body {
+  padding: 16px 20px 20px;
+}
+
+.rule-section-body p {
+  margin: 0 0 10px;
+}
+
+.rule-anchor {
+  color: inherit;
+  text-decoration: none;
+}
+
+.empty-state {
+  padding: 24px;
+  border: 1px dashed var(--line);
+}
+
+@media (max-width: 920px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-column + .card-column {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "unitId": "glaives",
+  "name": "Glaives",
+  "maxPerSquad": null,
+  "stats": [
+    {
+      "key": "w",
+      "label": "W",
+      "value": 4
+    },
+    {
+      "key": "m",
+      "label": "M",
+      "value": 7
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 4
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 2
+    }
+  ],
+  "defense": [
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "3"
+    },
+    {
+      "key": "sv-secondary",
+      "label": "SV?",
+      "value": "4+"
+    }
+  ],
+  "attacks": [
+    {
+      "name": "Glaive",
+      "kind": "melee",
+      "range": "1\"",
+      "atk": 2,
+      "hit": "3+",
+      "str": "4",
+      "aoe": "0\"",
+      "dmg": "1",
+      "notes": [
+        "The attack count is difficult to read and should be confirmed against the source card."
+      ]
+    }
+  ],
+  "tags": [],
+  "rulesText": [],
+  "sourceImage": "IMG_1041.JPG",
+  "verification": {
+    "status": "needs-verification",
+    "unresolvedFields": [
+      "maxPerSquad",
+      "defense[1].label",
+      "attacks[0].atk"
+    ],
+    "notes": [
+      "The source photo does not clearly show a max squad size.",
+      "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
+    ]
+  }
+}

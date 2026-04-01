@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "unitId": "pistollier",
+  "name": "Pistollier",
+  "maxPerSquad": 3,
+  "stats": [
+    {
+      "key": "w",
+      "label": "W",
+      "value": 4
+    },
+    {
+      "key": "m",
+      "label": "M",
+      "value": 7
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 4
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 2
+    }
+  ],
+  "defense": [
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "3"
+    },
+    {
+      "key": "sv-secondary",
+      "label": "SV?",
+      "value": "4+"
+    }
+  ],
+  "attacks": [
+    {
+      "name": "1 pistol",
+      "kind": "ranged",
+      "range": "12\"",
+      "atk": 4,
+      "hit": "3+",
+      "str": null,
+      "aoe": "0",
+      "dmg": "1",
+      "notes": []
+    },
+    {
+      "name": "2 pistol",
+      "kind": "ranged",
+      "range": "12\"",
+      "atk": 4,
+      "hit": "3+",
+      "str": null,
+      "aoe": "0",
+      "dmg": "1",
+      "notes": []
+    },
+    {
+      "name": "Fists",
+      "kind": "melee",
+      "range": null,
+      "atk": 2,
+      "hit": "5+",
+      "str": null,
+      "aoe": "0",
+      "dmg": "1",
+      "notes": [
+        "The melee row is partially obscured in the photo."
+      ]
+    }
+  ],
+  "tags": [],
+  "rulesText": [],
+  "sourceImage": "IMG_1038.JPG",
+  "verification": {
+    "status": "needs-verification",
+    "unresolvedFields": [
+      "defense[1].label",
+      "attacks[0].str",
+      "attacks[1].str",
+      "attacks[2].range",
+      "attacks[2].str"
+    ],
+    "notes": [
+      "Second defense box appears to read 4+, but the handwritten meaning of that box is not labeled.",
+      "The pistol rows do not clearly show a Strength column in the source photo."
+    ]
+  }
+}

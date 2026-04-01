@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "unitId": "gunner",
+  "name": "Gunner",
+  "maxPerSquad": 4,
+  "stats": [
+    {
+      "key": "w",
+      "label": "W",
+      "value": 4
+    },
+    {
+      "key": "m",
+      "label": "M",
+      "value": 7
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 4
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 2
+    }
+  ],
+  "defense": [
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "3"
+    },
+    {
+      "key": "sv-secondary",
+      "label": "SV?",
+      "value": "4+"
+    }
+  ],
+  "attacks": [
+    {
+      "name": "Gun",
+      "kind": "ranged",
+      "range": "18\"",
+      "atk": 2,
+      "hit": "3+",
+      "str": "8",
+      "aoe": "1\"",
+      "dmg": "D3",
+      "notes": []
+    },
+    {
+      "name": "Knife",
+      "kind": "melee",
+      "range": "1\"",
+      "atk": 1,
+      "hit": "4+",
+      "str": "3",
+      "aoe": "0\"",
+      "dmg": "1",
+      "notes": []
+    }
+  ],
+  "tags": [],
+  "rulesText": [],
+  "sourceImage": "IMG_1040.JPG",
+  "verification": {
+    "status": "needs-verification",
+    "unresolvedFields": [
+      "defense[1].label"
+    ],
+    "notes": [
+      "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
+    ]
+  }
+}

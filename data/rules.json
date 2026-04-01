@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "title": "Heaven Fall",
+  "sections": [
+    {
+      "id": "ammo",
+      "title": "Ammo",
+      "body": [
+        "Each turn when a weapon with 3+ inches of range makes a attack: after resolving the attack roll 1 D6 on a 3+ the weapon has passed the ammo check, on a 1 or a 2 place a ammunition marker next to them to simbolise that they have ran out of ammunition."
+      ]
+    },
+    {
+      "id": "cover",
+      "title": "Cover",
+      "body": [
+        "When a model is obscured or has a piece of terran blocking the sights of the attacker then that unit is considered in cover, while in cover the following benefits take action:",
+        "-1 to be hit",
+        "+1 to save dice"
+      ]
+    },
+    {
+      "id": "cells",
+      "title": "Cells",
+      "body": [
+        "At the start of each players turn that player gains 1 cell (this can be altered by abilities) The player can have up to a maximum of 5 cell points, once 5 has been reached the player must remove 1 STM from each unit under there control. To a minimum of 0"
+      ]
+    },
+    {
+      "id": "strains",
+      "title": "Strains",
+      "body": [
+        "The following will be abilites that are universal strains for units to use, each strain will specify how much Cells are needed to use it",
+        "Reroll- 1 cell",
+        "Cover fire- 2 cells",
+        "Chill- 1 cell",
+        "Burn- 1 cell"
+      ]
+    },
+    {
+      "id": "reroll",
+      "title": "Reroll",
+      "body": [
+        "Reroll -1 cell",
+        "At the start of your turn you may use this",
+        "Roll 1 D3, that number is the number of dice you may reroll this turn."
+      ]
+    },
+    {
+      "id": "cover-fire",
+      "title": "Cover fire",
+      "body": [
+        "Cover fire -2 cells",
+        "When your opponent moves a enemy within 12 inches of a friendly model.",
+        "That friendly model may make a normal move. After that model has made a normal move you may select another model that also withing 12 inches and has line of sight of the enemy model, that model may shoot at the enemy model if they are an elegible target."
+      ]
+    },
+    {
+      "id": "chill",
+      "title": "Chill",
+      "body": [
+        "Chill -1 cell",
+        "When a friendly unit would be destroyed you may use this (excluding Vehicles)",
+        "All there remaining STM is lost and there remaining wounds is changed to 1"
+      ]
+    },
+    {
+      "id": "burn",
+      "title": "Burn",
+      "body": [
+        "Burn -1 cell",
+        "When a friendly unit would be destroyed you may use this (excluding Vehicles)",
+        "Before the model is removed it may make 2 STM actions (not of the same action) before dying."
+      ]
+    }
+  ]
+}
