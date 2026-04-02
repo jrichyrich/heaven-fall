@@ -56,7 +56,7 @@
       <section class="card-section">
         <h2 class="section-heading">Stats</h2>
         <div class="section-body">
-          <div class="chip-grid">
+          <div class="chip-grid chip-grid-stats">
             ${stats.map((stat) => `
               <div class="stat-chip">
                 <span class="chip-label">${escapeHtml(stat.label)}</span>
@@ -159,6 +159,20 @@
     `;
   }
 
+  function renderPointsSection(points) {
+    if (points === null || points === undefined || points === "") {
+      return "";
+    }
+    return `
+      <section class="card-section">
+        <h2 class="section-heading">Points</h2>
+        <div class="section-body">
+          <div class="points-display">${escapeHtml(displayValue(points))} pts</div>
+        </div>
+      </section>
+    `;
+  }
+
   function renderNotesSection(title, values, className) {
     const items = Array.isArray(values) ? values.filter(Boolean) : [];
     if (!items.length) {
@@ -187,7 +201,7 @@
           <h3>${escapeHtml(verificationLabel(verification))}</h3>
           ${renderTrustBadge(verification)}
         </div>
-        <p>Capture quality: <strong>${escapeHtml(displayValue(verification.sourceQuality))}</strong>. Reviewed: <strong>${escapeHtml(displayValue(verification.updatedAt))}</strong>.</p>
+        <p>Source quality: <strong>${escapeHtml(displayValue(verification.sourceQuality))}</strong>. Reviewed: <strong>${escapeHtml(displayValue(verification.updatedAt))}</strong>.</p>
         ${verification.hasUnresolvedFields ? `
           ${renderNotesSection("Unresolved Fields", verification.unresolvedFields, "notes-list")}
           ${renderNotesSection("Capture Notes", verification.notes, "notes-list")}
@@ -198,8 +212,9 @@
 
   function renderDigitalCard(unit) {
     const tags = Array.isArray(unit && unit.tags) ? unit.tags : [];
+    const specialRules = Array.isArray(unit && unit.specialRules) ? unit.specialRules : [];
     const verification = unit && unit.verification ? unit.verification : {};
-    const maxLabel = unit && unit.maxPerSquad != null ? `Max ${unit.maxPerSquad}` : "Max ?";
+    const maxLabel = unit && unit.maxPerSquad != null ? `Max ${unit.maxPerSquad}` : null;
     return `
       <article class="card-surface">
         <header class="card-header">
@@ -207,7 +222,8 @@
             <span class="section-label">Heaven Fall Unit</span>
             <h1 class="card-title">${escapeHtml(unit.name)}</h1>
             <div class="pill-row">
-              <span class="pill">${escapeHtml(maxLabel)}</span>
+              <span class="pill">${escapeHtml(displayValue(unit.points))} pts</span>
+              ${maxLabel ? `<span class="pill">${escapeHtml(maxLabel)}</span>` : ""}
               ${renderTrustBadge(verification)}
               ${tags.map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`).join("")}
             </div>
@@ -221,11 +237,13 @@
         <div class="card-grid">
           <div class="card-column">
             ${renderStatGrid(unit.stats)}
+            ${renderPointsSection(unit.points)}
             ${renderDefenseGrid(unit.defense)}
             ${renderTagSection(unit.tags)}
           </div>
           <div class="card-column">
             ${renderAttacks(unit.attacks)}
+            ${renderNotesSection("Special Rules", specialRules, "notes-list")}
             ${renderNotesSection("Unit Notes", unit.rulesText, "notes-list")}
           </div>
         </div>
@@ -259,6 +277,7 @@
   return {
     escapeHtml,
     renderDigitalCard,
+    renderNotesSection,
     renderRulesGroups,
     verificationLabel,
     verificationTone,

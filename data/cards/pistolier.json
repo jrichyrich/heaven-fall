@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "unitId": "pistolier",
+  "name": "Pistolier",
+  "points": 10,
+  "maxPerSquad": 3,
+  "stats": [
+    { "key": "m", "label": "M", "value": "7\"", "sourceText": "M 7\"" },
+    { "key": "w", "label": "W", "value": 4, "sourceText": "W 4" },
+    { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
+    { "key": "t", "label": "T", "value": 4, "sourceText": "T 4" },
+    { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
+    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+  ],
+  "defense": [],
+  "attacks": [
+    {
+      "name": "Pistol 1",
+      "kind": "ranged",
+      "range": "9\"",
+      "atk": 4,
+      "hit": "4+",
+      "str": 3,
+      "aoe": "0\"",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Pistol 1 | 9\" | 4 | 4+ | 3 | 0\" | 1"
+    },
+    {
+      "name": "Pistol 2",
+      "kind": "ranged",
+      "range": "9\"",
+      "atk": 4,
+      "hit": "4+",
+      "str": 3,
+      "aoe": "0\"",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Pistol 2 | 9\" | 4 | 4+ | 3 | 0\" | 1"
+    },
+    {
+      "name": "Fists",
+      "kind": "melee",
+      "range": "1\"",
+      "atk": "D3",
+      "hit": "5+",
+      "str": 3,
+      "aoe": "0\"",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Fists | 1\" | D3 | 5+ | 3 | 0\" | 1"
+    }
+  ],
+  "tags": [],
+  "specialRules": [
+    "Dual wield: This model can shoot both its Pistol 1 and Pistol 2 for the cost of 1 STM. Both need an ammo check."
+  ],
+  "rulesText": [],
+  "source": {
+    "type": "pdf_page",
+    "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+    "page": 11
+  },
+  "verification": {
+    "status": "verified",
+    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "sourceQuality": "good",
+    "unresolvedFields": [],
+    "notes": [],
+    "fieldNotes": {},
+    "reviewChecklist": {
+      "stats": true,
+      "defense": true,
+      "attacks": true,
+      "tags": true,
+      "rulesText": true
+    }
+  }
+}

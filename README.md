@@ -1,6 +1,6 @@
 # Heaven Fall Card Library
 
-Static v1 card library for Heaven Fall.
+Static PDF-backed card library for Heaven Fall.
 
 ## Build
 
@@ -8,13 +8,14 @@ Static v1 card library for Heaven Fall.
 python3 scripts/build_heaven_fall_catalog.py
 ```
 
-This reads raw source data from `data/`, copies the original photographed cards into `docs/assets/source-cards/`, and regenerates:
+This reads canonical datasheets from `data/`, renders the linked PDF pages into `docs/assets/source-cards/`, and regenerates:
 
 - `docs/data/manifest.json`
 - `docs/data/catalog.json`
 - `docs/data/verification-report.json`
 
-Raw photographed cards now live under `assets/raw-captures/`. The build reads from that directory by default.
+The canonical source PDF lives at `assets/pdf/datasheets-for-heavenfall.pdf`.
+Archived handwritten captures live under `archive/handwritten-v1/` and are not emitted into the live catalog.
 
 ## Test
 

@@ -1,98 +1,226 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-01T20:33:55+00:00",
+  "generatedAt": "2026-04-02T02:27:05+00:00",
   "summary": {
     "statusCounts": {
-      "in_review": 4,
+      "in_review": 0,
       "unverified": 0,
-      "verified": 0
+      "verified": 12
     },
     "sourceQualityCounts": {
       "fair": 0,
-      "good": 0,
-      "poor": 4
+      "good": 12,
+      "poor": 0
     },
-    "unresolvedFieldTotal": 12,
-    "fullyVerifiedCount": 0,
-    "inReviewCount": 4,
+    "unresolvedFieldTotal": 0,
+    "fullyVerifiedCount": 12,
+    "inReviewCount": 0,
     "unverifiedCount": 0
   },
   "cards": [
     {
+      "unitId": "dreg",
+      "name": "Dreg",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "dreg.png",
+      "sourcePage": 1
+    },
+    {
+      "unitId": "lwbt-transport",
+      "name": "LWBT Transport mode",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "lwbt-transport.png",
+      "sourcePage": 2
+    },
+    {
+      "unitId": "lwbt-heavy-weapon",
+      "name": "LWBT Heavy weapon",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "lwbt-heavy-weapon.png",
+      "sourcePage": 3
+    },
+    {
+      "unitId": "lwbt-quad-gun",
+      "name": "LWBT Quad gun",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "lwbt-quad-gun.png",
+      "sourcePage": 4
+    },
+    {
+      "unitId": "breaker",
+      "name": "Breaker",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "breaker.png",
+      "sourcePage": 5
+    },
+    {
+      "unitId": "mercenary",
+      "name": "Mercenary",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "mercenary.png",
+      "sourcePage": 6
+    },
+    {
+      "unitId": "dreg-captain",
+      "name": "Dreg captain",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "dreg-captain.png",
+      "sourcePage": 7
+    },
+    {
+      "unitId": "skrap",
+      "name": "Skrap",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "skrap.png",
+      "sourcePage": 8
+    },
+    {
+      "unitId": "glaive",
+      "name": "Glaive",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "glaive.png",
+      "sourcePage": 9
+    },
+    {
       "unitId": "champion",
       "name": "Champion",
-      "status": "in_review",
-      "statusLabel": "Source unclear",
-      "sourceQuality": "poor",
-      "updatedAt": "2026-04-01T20:30:00+00:00",
-      "unresolvedFieldCount": 3,
-      "unresolvedFields": [
-        "stats[0].value",
-        "defense[1].label",
-        "defense[2].label"
-      ],
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
       "progress": {
-        "completed": 3,
+        "completed": 5,
         "total": 5,
-        "percent": 60
-      }
+        "percent": 100
+      },
+      "sourceImage": "champion.png",
+      "sourcePage": 10
     },
     {
-      "unitId": "glaives",
-      "name": "Glaives",
-      "status": "in_review",
-      "statusLabel": "Source unclear",
-      "sourceQuality": "poor",
-      "updatedAt": "2026-04-01T20:30:00+00:00",
-      "unresolvedFieldCount": 3,
-      "unresolvedFields": [
-        "maxPerSquad",
-        "defense[1].label",
-        "attacks[0].atk"
-      ],
+      "unitId": "pistolier",
+      "name": "Pistolier",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
       "progress": {
-        "completed": 3,
+        "completed": 5,
         "total": 5,
-        "percent": 60
-      }
+        "percent": 100
+      },
+      "sourceImage": "pistolier.png",
+      "sourcePage": 11
     },
     {
-      "unitId": "gunner",
-      "name": "Gunner",
-      "status": "in_review",
-      "statusLabel": "Source unclear",
-      "sourceQuality": "poor",
-      "updatedAt": "2026-04-01T20:30:00+00:00",
-      "unresolvedFieldCount": 1,
-      "unresolvedFields": [
-        "defense[1].label"
-      ],
+      "unitId": "rampager",
+      "name": "Rampager",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
       "progress": {
-        "completed": 4,
+        "completed": 5,
         "total": 5,
-        "percent": 80
-      }
-    },
-    {
-      "unitId": "pistollier",
-      "name": "Pistollier",
-      "status": "in_review",
-      "statusLabel": "Source unclear",
-      "sourceQuality": "poor",
-      "updatedAt": "2026-04-01T20:30:00+00:00",
-      "unresolvedFieldCount": 5,
-      "unresolvedFields": [
-        "defense[1].label",
-        "attacks[0].str",
-        "attacks[1].str",
-        "attacks[2].range",
-        "attacks[2].str"
-      ],
-      "progress": {
-        "completed": 3,
-        "total": 5,
-        "percent": 60
-      }
+        "percent": 100
+      },
+      "sourceImage": "rampager.png",
+      "sourcePage": 12
     }
   ]
 }

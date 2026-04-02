@@ -325,6 +325,10 @@ button {
   gap: 12px;
 }
 
+.chip-grid-stats .stat-chip {
+  min-width: 96px;
+}
+
 .stat-chip,
 .defense-chip {
   min-width: 84px;
@@ -347,6 +351,13 @@ button {
   font-family: "Rajdhani", sans-serif;
   font-size: 2rem;
   line-height: 1;
+}
+
+.points-display {
+  font-family: "Rajdhani", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .attack-table {
@@ -482,7 +493,7 @@ button {
 
 .review-summary-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
   margin-bottom: 18px;
 }

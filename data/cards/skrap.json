@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "unitId": "skrap",
+  "name": "Skrap",
+  "points": 5,
+  "maxPerSquad": null,
+  "stats": [
+    { "key": "m", "label": "M", "value": "6\"", "sourceText": "M 6\"" },
+    { "key": "w", "label": "W", "value": 2, "sourceText": "W 2" },
+    { "key": "sv", "label": "SV", "value": "5+", "sourceText": "SV 5+" },
+    { "key": "t", "label": "T", "value": 2, "sourceText": "T 2" },
+    { "key": "sd", "label": "SD", "value": 2, "sourceText": "SD 2" },
+    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+  ],
+  "defense": [],
+  "attacks": [
+    {
+      "name": "Melee weapon",
+      "kind": "melee",
+      "range": "1\"",
+      "atk": 2,
+      "hit": "4+",
+      "str": 2,
+      "aoe": "0\"",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Melee weapon | 1\" | 2 | 4+ | 2 | 0\" | 1"
+    },
+    {
+      "name": "Scrap piston",
+      "kind": "ranged",
+      "range": "7\"",
+      "atk": "D3",
+      "hit": "4+",
+      "str": 3,
+      "aoe": "0\"",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Scrap piston | 7\" | D3 | 4+ | 3 | 0\" | 1"
+    }
+  ],
+  "tags": [],
+  "specialRules": [
+    "Skrap ammo: When a Pistolier is within 1\" of this model, this model may give its ammo to the Pistolier. The Pistolier loses one ammunition token and this model gains an ammunition token."
+  ],
+  "rulesText": [],
+  "source": {
+    "type": "pdf_page",
+    "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+    "page": 8
+  },
+  "verification": {
+    "status": "verified",
+    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "sourceQuality": "good",
+    "unresolvedFields": [],
+    "notes": [],
+    "fieldNotes": {},
+    "reviewChecklist": {
+      "stats": true,
+      "defense": true,
+      "attacks": true,
+      "tags": true,
+      "rulesText": true
+    }
+  }
+}

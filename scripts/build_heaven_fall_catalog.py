@@ -1,6 +1,7 @@
 import argparse
 import json
 import shutil
+import subprocess
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -15,6 +16,22 @@ UNIVERSAL_STRAIN_TITLES = {"Strains", "Reroll", "Cover fire", "Chill", "Burn"}
 VERIFICATION_STATUSES = {"unverified", "in_review", "verified"}
 SOURCE_QUALITY_VALUES = {"poor", "fair", "good"}
 REVIEW_CHECKLIST_FIELDS = ("stats", "defense", "attacks", "tags", "rulesText")
+REQUIRED_STAT_KEYS = ("m", "w", "sv", "t", "sd", "stm")
+SOURCE_TYPES = {"image", "pdf_page"}
+CANONICAL_UNIT_NAMES = {
+    "dreg": "Dreg",
+    "lwbt-transport": "LWBT Transport mode",
+    "lwbt-heavy-weapon": "LWBT Heavy weapon",
+    "lwbt-quad-gun": "LWBT Quad gun",
+    "breaker": "Breaker",
+    "mercenary": "Mercenary",
+    "dreg-captain": "Dreg captain",
+    "skrap": "Skrap",
+    "glaive": "Glaive",
+    "champion": "Champion",
+    "pistolier": "Pistolier",
+    "rampager": "Rampager",
+}
 
 
 def utc_now() -> str:
@@ -29,6 +46,11 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def write_json(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+
+
 def ensure_list(value: object, field_name: str, path: Path) -> list:
     if not isinstance(value, list):
         raise ValueError(f"{path}: expected '{field_name}' to be a list")
@@ -39,6 +61,21 @@ def ensure_dict(value: object, field_name: str, path: Path) -> dict:
     if not isinstance(value, dict):
         raise ValueError(f"{path}: expected '{field_name}' to be an object")
     return value
+
+
+def ensure_string_list(values: object, field_name: str, path: Path) -> list[str]:
+    items = ensure_list(values, field_name, path)
+    for index, item in enumerate(items):
+        if not isinstance(item, str):
+            raise ValueError(f"{path}: {field_name}[{index}] must be a string")
+    return items
+
+
+def resolve_relative_path(value: str, base_root: Path) -> Path:
+    path = Path(value)
+    if path.is_absolute():
+        return path
+    return (base_root / path).resolve()
 
 
 def validate_rules_payload(payload: dict, path: Path) -> dict:
@@ -115,31 +152,138 @@ def validate_verification_block(payload: dict, path: Path) -> dict:
     return verification
 
 
-def validate_card_payload(payload: dict, path: Path, source_root: Path) -> dict:
+def validate_stat_block(stats: list[dict], path: Path) -> None:
+    validate_source_text_entries(stats, "stats", path)
+    stat_keys = []
+    for index, stat in enumerate(stats):
+        key = str(stat.get("key") or "").strip().lower()
+        label = str(stat.get("label") or "").strip()
+        if not key:
+            raise ValueError(f"{path}: stats[{index}].key is required")
+        if not label:
+            raise ValueError(f"{path}: stats[{index}].label is required")
+        if stat.get("value") in (None, ""):
+            raise ValueError(f"{path}: stats[{index}].value is required")
+        stat_keys.append(key)
+    if tuple(stat_keys) != REQUIRED_STAT_KEYS:
+        raise ValueError(f"{path}: stats must contain keys in order {list(REQUIRED_STAT_KEYS)}")
+
+
+def validate_defense_block(defense: list[dict], path: Path) -> None:
+    validate_source_text_entries(defense, "defense", path)
+    for index, entry in enumerate(defense):
+        if not str(entry.get("key") or "").strip():
+            raise ValueError(f"{path}: defense[{index}].key is required")
+        if not str(entry.get("label") or "").strip():
+            raise ValueError(f"{path}: defense[{index}].label is required")
+        if entry.get("value") in (None, ""):
+            raise ValueError(f"{path}: defense[{index}].value is required")
+
+
+def validate_attack_block(attacks: list[dict], path: Path) -> None:
+    validate_source_text_entries(attacks, "attacks", path)
+    for index, attack in enumerate(attacks):
+        if not str(attack.get("name") or "").strip():
+            raise ValueError(f"{path}: attacks[{index}].name is required")
+        for field_name in ("kind", "range", "atk", "hit", "str", "aoe", "dmg"):
+            if attack.get(field_name) in (None, ""):
+                raise ValueError(f"{path}: attacks[{index}].{field_name} is required")
+        if "notes" in attack:
+            ensure_string_list(attack.get("notes"), f"attacks[{index}].notes", path)
+
+
+def validate_source_block(payload: dict, unit_id: str, path: Path, source_root: Path, base_root: Path) -> dict:
+    source = ensure_dict(payload.get("source"), "source", path)
+    source_type = str(source.get("type") or "").strip()
+    if source_type not in SOURCE_TYPES:
+        raise ValueError(f"{path}: source.type must be one of {sorted(SOURCE_TYPES)}")
+
+    output_name = str(source.get("outputName") or "").strip()
+    if output_name and Path(output_name).name != output_name:
+        raise ValueError(f"{path}: source.outputName must be a filename, not a path")
+
+    if source_type == "image":
+        file_name = str(source.get("file") or "").strip()
+        if not file_name:
+            raise ValueError(f"{path}: source.file is required for image sources")
+        input_path = resolve_relative_path(file_name, source_root)
+        if not input_path.exists():
+            raise ValueError(f"{path}: source image not found: {input_path}")
+        return {
+            "type": "image",
+            "file": file_name,
+            "inputPath": input_path,
+            "outputName": output_name or Path(file_name).name,
+            "sortOrder": int(source.get("sortOrder") or 9999),
+        }
+
+    file_name = str(source.get("file") or "").strip()
+    if not file_name:
+        raise ValueError(f"{path}: source.file is required for pdf_page sources")
+    page = source.get("page")
+    if not isinstance(page, int) or page < 1:
+        raise ValueError(f"{path}: source.page must be a positive integer")
+    input_path = resolve_relative_path(file_name, base_root)
+    if not input_path.exists():
+        raise ValueError(f"{path}: source pdf not found: {input_path}")
+    return {
+        "type": "pdf_page",
+        "file": file_name,
+        "inputPath": input_path,
+        "page": page,
+        "outputName": output_name or f"{unit_id}.png",
+        "sortOrder": int(source.get("sortOrder") or page),
+    }
+
+
+def validate_card_payload(payload: dict, path: Path, source_root: Path, base_root: Path) -> dict:
     if payload.get("schemaVersion") != SCHEMA_VERSION:
         raise ValueError(f"{path}: unsupported schemaVersion {payload.get('schemaVersion')}")
 
-    required_strings = ("unitId", "name", "sourceImage")
+    required_strings = ("unitId", "name")
     for field_name in required_strings:
         if not str(payload.get(field_name) or "").strip():
             raise ValueError(f"{path}: missing required field '{field_name}'")
 
+    unit_id = str(payload["unitId"]).strip()
+    name = str(payload["name"]).strip()
+    if unit_id == "pistollier" or name == "Pistollier":
+        raise ValueError(f"{path}: canonical naming mismatch detected for pistolier")
+    if unit_id in CANONICAL_UNIT_NAMES and name != CANONICAL_UNIT_NAMES[unit_id]:
+        raise ValueError(f"{path}: canonical name for '{unit_id}' must be '{CANONICAL_UNIT_NAMES[unit_id]}'")
+
+    points = payload.get("points")
+    if not isinstance(points, int):
+        raise ValueError(f"{path}: missing required field 'points'")
+
+    max_per_squad = payload.get("maxPerSquad")
+    if max_per_squad is not None and not isinstance(max_per_squad, int):
+        raise ValueError(f"{path}: maxPerSquad must be an integer when present")
+
     stats = ensure_list(payload.get("stats"), "stats", path)
     defense = ensure_list(payload.get("defense"), "defense", path)
     attacks = ensure_list(payload.get("attacks"), "attacks", path)
-    ensure_list(payload.get("tags"), "tags", path)
-    ensure_list(payload.get("rulesText"), "rulesText", path)
+    tags = ensure_string_list(payload.get("tags"), "tags", path)
+    rules_text = ensure_string_list(payload.get("rulesText"), "rulesText", path)
+    special_rules = ensure_string_list(payload.get("specialRules"), "specialRules", path)
 
-    validate_source_text_entries(stats, "stats", path)
-    validate_source_text_entries(defense, "defense", path)
-    validate_source_text_entries(attacks, "attacks", path)
-    validate_verification_block(payload, path)
+    validate_stat_block(stats, path)
+    validate_defense_block(defense, path)
+    validate_attack_block(attacks, path)
+    verification = validate_verification_block(payload, path)
+    source = validate_source_block(payload, unit_id, path, source_root, base_root)
 
-    source_image_path = source_root / str(payload["sourceImage"])
-    if not source_image_path.exists():
-        raise ValueError(f"{path}: source image not found: {source_image_path}")
-
-    return payload
+    return {
+        **payload,
+        "unitId": unit_id,
+        "name": name,
+        "points": points,
+        "tags": tags,
+        "rulesText": rules_text,
+        "specialRules": special_rules,
+        "verification": verification,
+        "source": source,
+    }
 
 
 def load_rules(data_root: Path) -> dict:
@@ -151,8 +295,9 @@ def load_cards(data_root: Path, source_root: Path) -> list[dict]:
     cards_dir = data_root / "cards"
     records = []
     seen_ids: set[str] = set()
+    base_root = data_root.parent.resolve()
     for path in sorted(cards_dir.glob("*.json")):
-        payload = validate_card_payload(load_json(path), path, source_root)
+        payload = validate_card_payload(load_json(path), path, source_root, base_root)
         unit_id = payload["unitId"]
         if unit_id in seen_ids:
             raise ValueError(f"Duplicate unitId detected: {unit_id}")
@@ -160,7 +305,7 @@ def load_cards(data_root: Path, source_root: Path) -> list[dict]:
         records.append(payload)
     if not records:
         raise ValueError(f"No card files found in {cards_dir}")
-    return records
+    return sorted(records, key=lambda card: (card["source"]["sortOrder"], card["name"]))
 
 
 def build_rule_groups(rules_payload: dict) -> list[dict]:
@@ -190,23 +335,31 @@ def review_progress(review_checklist: dict) -> dict:
     }
 
 
-def normalize_card(card: dict) -> dict:
+def normalize_card(card: dict, asset_url: str) -> dict:
     verification = card["verification"]
     unresolved = list(verification["unresolvedFields"])
     status = verification["status"]
     source_quality = verification["sourceQuality"]
+    source = card["source"]
     return {
         "schemaVersion": SCHEMA_VERSION,
         "unitId": card["unitId"],
         "name": card["name"],
+        "points": card["points"],
         "maxPerSquad": card.get("maxPerSquad"),
         "stats": list(card["stats"]),
         "defense": list(card["defense"]),
         "attacks": list(card["attacks"]),
         "tags": list(card["tags"]),
+        "specialRules": list(card["specialRules"]),
         "rulesText": list(card["rulesText"]),
-        "sourceImage": card["sourceImage"],
-        "sourceImageUrl": f"./{SOURCE_IMAGE_DIR.as_posix()}/{card['sourceImage']}",
+        "sourceImage": source["outputName"],
+        "sourceImageUrl": asset_url,
+        "source": {
+            "type": source["type"],
+            "file": source["file"],
+            "page": source.get("page"),
+        },
         "verification": {
             "status": status,
             "statusLabel": (
@@ -255,6 +408,8 @@ def build_verification_report(normalized_units: list[dict], generated_at: str) -
             "unresolvedFieldCount": len(verification["unresolvedFields"]),
             "unresolvedFields": list(verification["unresolvedFields"]),
             "progress": dict(verification["progress"]),
+            "sourceImage": unit["sourceImage"],
+            "sourcePage": unit["source"].get("page"),
         })
     return {
         "schemaVersion": SCHEMA_VERSION,
@@ -264,19 +419,50 @@ def build_verification_report(normalized_units: list[dict], generated_at: str) -
     }
 
 
-def write_json(path: Path, payload: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+def render_pdf_page(source_path: Path, page: int, target_path: Path) -> None:
+    target_path.parent.mkdir(parents=True, exist_ok=True)
+    prefix = target_path.with_suffix("")
+    try:
+        subprocess.run(
+            [
+                "pdftoppm",
+                "-png",
+                "-singlefile",
+                "-f",
+                str(page),
+                "-l",
+                str(page),
+                str(source_path),
+                str(prefix),
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except FileNotFoundError as error:
+        raise RuntimeError("pdftoppm is required to render PDF source pages") from error
+    except subprocess.CalledProcessError as error:
+        stderr = error.stderr.strip() if error.stderr else ""
+        raise RuntimeError(f"Failed to render PDF page {page} from {source_path}: {stderr}") from error
 
 
-def copy_source_images(cards: list[dict], source_root: Path, docs_root: Path) -> dict[str, str]:
+def render_source_assets(cards: list[dict], docs_root: Path) -> dict[str, str]:
     target_root = docs_root / SOURCE_IMAGE_DIR
+    if target_root.exists():
+        shutil.rmtree(target_root)
     target_root.mkdir(parents=True, exist_ok=True)
+
     asset_index: dict[str, str] = {}
     for card in cards:
-        file_name = card["sourceImage"]
-        shutil.copy2(source_root / file_name, target_root / file_name)
-        asset_index[card["unitId"]] = f"./{SOURCE_IMAGE_DIR.as_posix()}/{file_name}"
+        source = card["source"]
+        target_path = target_root / source["outputName"]
+        if source["type"] == "image":
+            shutil.copy2(source["inputPath"], target_path)
+        else:
+            render_pdf_page(source["inputPath"], source["page"], target_path)
+        if not target_path.exists():
+            raise ValueError(f"Rendered source asset missing for {card['unitId']}: {target_path}")
+        asset_index[card["unitId"]] = f"./{SOURCE_IMAGE_DIR.as_posix()}/{target_path.name}"
     return asset_index
 
 
@@ -284,8 +470,8 @@ def build_catalog(data_root: Path, docs_root: Path, source_root: Path) -> tuple[
     rules_payload = load_rules(data_root)
     cards = load_cards(data_root, source_root)
     rule_groups = build_rule_groups(rules_payload)
-    normalized_units = [normalize_card(card) for card in cards]
-    asset_index = copy_source_images(cards, source_root, docs_root)
+    asset_index = render_source_assets(cards, docs_root)
+    normalized_units = [normalize_card(card, asset_index[card["unitId"]]) for card in cards]
     generated_at = utc_now()
     verification_summary = build_verification_summary(normalized_units)
     verification_report = build_verification_report(normalized_units, generated_at)
@@ -321,7 +507,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--source-root",
         default=RAW_CAPTURE_DIR.as_posix(),
-        help="Path to the raw source images referenced by the raw card JSON.",
+        help="Path used to resolve image-based source assets for test fixtures and archived captures.",
     )
     return parser.parse_args()
 

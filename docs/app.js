@@ -207,11 +207,12 @@
 
   function summarizeUnit(unit) {
     const verification = unit && unit.verification ? unit.verification : null;
-    const maxLabel = unit && unit.maxPerSquad != null ? `Max ${unit.maxPerSquad}` : "Max ?";
+    const pointLabel = unit && unit.points != null ? `${unit.points} pts` : "? pts";
+    const maxLabel = unit && unit.maxPerSquad != null ? `Max ${unit.maxPerSquad}` : null;
     return `
       <button class="unit-button" data-action="select-unit" data-value="${escapeHtml(unit.unitId)}">
         <span class="unit-name">${escapeHtml(unit.name)}</span>
-        <span class="unit-meta">${escapeHtml(maxLabel)}</span>
+        <span class="unit-meta">${escapeHtml(pointLabel)}${maxLabel ? ` · ${escapeHtml(maxLabel)}` : ""}</span>
         <div class="pill-row">
           ${renderer.renderTrustBadge(verification, "pill-inline")}
           ${unit.tags.map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`).join("")}
@@ -313,12 +314,12 @@
         <div class="source-image-scroll">
           <img
             src="${escapeHtml(unit.sourceImageUrl)}"
-            alt="Source card for ${escapeHtml(unit.name)}"
+            alt="Source datasheet for ${escapeHtml(unit.name)}"
             class="source-image-zoomable"
             style="width:${escapeHtml(zoom * 100)}%;"
           >
         </div>
-        <p class="source-copy">Original photographed card used for the transcription. Use zoom and scroll to inspect handwritten details.</p>
+        <p class="source-copy">Rendered source page from the canonical Heaven Fall datasheet PDF. Use zoom and scroll to inspect the original published values and rules text.</p>
       </figure>
     `;
   }
@@ -406,6 +407,14 @@
         <div class="rule-section-body">
           <div class="review-summary-grid">
             <div>
+              <span class="meta-label">Points</span>
+              <div>${escapeHtml(unit.points != null ? `${unit.points} pts` : "?")}</div>
+            </div>
+            <div>
+              <span class="meta-label">Max</span>
+              <div>${escapeHtml(unit.maxPerSquad != null ? String(unit.maxPerSquad) : "-")}</div>
+            </div>
+            <div>
               <span class="meta-label">Status</span>
               <div>${escapeHtml(renderer.verificationLabel(verification))}</div>
             </div>
@@ -443,6 +452,8 @@
             { key: "aoe", label: "AoE" },
             { key: "dmg", label: "Dmg" }
           ])}
+          ${renderer.renderNotesSection("Special Rules", unit.specialRules, "notes-list")}
+          ${renderer.renderNotesSection("Unit Notes", unit.rulesText, "notes-list")}
         </div>
       </section>
     `;
@@ -475,7 +486,7 @@
             <div>
               <span class="section-label">Verification Workflow</span>
               <h2 class="view-title">${selected ? escapeHtml(selected.name) : "No Matching Unit"}</h2>
-              <p class="view-copy">Compare the digital transcription against the source capture and review unresolved fields.</p>
+              <p class="view-copy">Compare the digital card against the canonical PDF source page and review any remaining verification metadata.</p>
             </div>
             <div class="toggle-row">
               <button class="toggle-btn" data-action="select-relative-unit" data-value="-1">Previous</button>
@@ -506,7 +517,7 @@
             <div>
               <span class="section-label">Unit Library</span>
               <h2 class="view-title">${selected ? escapeHtml(selected.name) : "No Unit Selected"}</h2>
-              <p class="view-copy">Toggle between the rebuilt card and the original handwritten source photo.</p>
+              <p class="view-copy">Toggle between the rebuilt card and the rendered source page from the canonical datasheet PDF.</p>
             </div>
             ${renderPreviewToggle(state)}
           </header>

@@ -1,43 +1,43 @@
 {
   "schemaVersion": 1,
-  "unitId": "champion",
-  "name": "Champion",
-  "points": 20,
+  "unitId": "dreg-captain",
+  "name": "Dreg captain",
+  "points": 14,
   "maxPerSquad": null,
   "stats": [
-    { "key": "m", "label": "M", "value": "7\"", "sourceText": "M 7\"" },
+    { "key": "m", "label": "M", "value": "6\"", "sourceText": "M 6\"" },
     { "key": "w", "label": "W", "value": 5, "sourceText": "W 5" },
     { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
-    { "key": "t", "label": "T", "value": 4, "sourceText": "T 4" },
+    { "key": "t", "label": "T", "value": 3, "sourceText": "T 3" },
     { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
     { "key": "stm", "label": "STM", "value": 3, "sourceText": "STM 3" }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "6+", "sourceText": "6+" }
+    { "key": "ward", "label": "Ward", "value": "5+", "sourceText": "5+" }
   ],
   "attacks": [
     {
-      "name": "Master Glaive",
+      "name": "Blunt weapon",
       "kind": "melee",
       "range": "1\"",
-      "atk": 5,
+      "atk": 4,
       "hit": "3+",
-      "str": 5,
+      "str": 4,
       "aoe": "1\"",
-      "dmg": 2,
+      "dmg": 1,
       "notes": [],
-      "sourceText": "Master Glaive | 1\" | 5 | 3+ | 5 | 1\" | 2"
+      "sourceText": "Blunt weapon | 1\" | 4 | 3+ | 4 | 1\" | 1"
     }
   ],
   "tags": ["Leader"],
   "specialRules": [
-    "Warcry: Once per game when this model destroys your opponent's Leader model, all remaining friendly models gain 1 STM and all enemy models within 6\" lose 1 STM."
+    "Dreg leader: When giving units their STM for the turn you may select 1 friendly model within 6\" of this model. That model gains 1 extra STM point. This model cannot give itself the extra STM."
   ],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 10
+    "page": 7
   },
   "verification": {
     "status": "verified",

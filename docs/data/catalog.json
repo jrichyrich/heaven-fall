@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "Heaven Fall Card Library",
-  "generatedAt": "2026-04-01T20:33:55+00:00",
+  "generatedAt": "2026-04-02T02:27:05+00:00",
   "rules": [
     {
       "id": "core-rules",
@@ -89,27 +89,568 @@
   "units": [
     {
       "schemaVersion": 1,
-      "unitId": "champion",
-      "name": "Champion",
-      "maxPerSquad": 1,
+      "unitId": "dreg",
+      "name": "Dreg",
+      "points": 4,
+      "maxPerSquad": null,
       "stats": [
-        {
-          "key": "w",
-          "label": "W",
-          "value": null,
-          "sourceText": "W ?"
-        },
         {
           "key": "m",
           "label": "M",
-          "value": 7,
-          "sourceText": "M 7"
+          "value": "6\"",
+          "sourceText": "M 6\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 3,
+          "sourceText": "W 3"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "4+",
+          "sourceText": "SV 4+"
         },
         {
           "key": "t",
           "label": "T",
+          "value": 2,
+          "sourceText": "T 2"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [],
+      "attacks": [
+        {
+          "name": "Gun",
+          "kind": "ranged",
+          "range": "12\"",
+          "atk": "D3",
+          "hit": "4+",
+          "str": 3,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
+        },
+        {
+          "name": "Knife",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 2,
+          "hit": "4+",
+          "str": 2,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Knife | 1\" | 2 | 4+ | 2 | 0 | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "dreg.png",
+      "sourceImageUrl": "./assets/source-cards/dreg.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 1
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "lwbt-transport",
+      "name": "LWBT Transport mode",
+      "points": 35,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "8\"",
+          "sourceText": "M 8\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 8,
+          "sourceText": "W 8"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "3+",
+          "sourceText": "SV 3+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 5,
+          "sourceText": "T 5"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Gun",
+          "kind": "ranged",
+          "range": "12\"",
+          "atk": "D3",
+          "hit": "4+",
+          "str": 3,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [
+        "Transport: This model can transport up to 4 space-dreg (1 space) and Breaker (2 space)."
+      ],
+      "rulesText": [],
+      "sourceImage": "lwbt-transport.png",
+      "sourceImageUrl": "./assets/source-cards/lwbt-transport.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 2
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "lwbt-heavy-weapon",
+      "name": "LWBT Heavy weapon",
+      "points": 50,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "8\"",
+          "sourceText": "M 8\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 8,
+          "sourceText": "W 8"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "3+",
+          "sourceText": "SV 3+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 5,
+          "sourceText": "T 5"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Heavy gun",
+          "kind": "ranged",
+          "range": "20\"",
+          "atk": 1,
+          "hit": "4+",
+          "str": 10,
+          "aoe": "2\"",
+          "dmg": "D3+1",
+          "notes": [],
+          "sourceText": "Heavy gun | 20\" | 1 | 4+ | 10 | 2\" | D3+1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "lwbt-heavy-weapon.png",
+      "sourceImageUrl": "./assets/source-cards/lwbt-heavy-weapon.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 3
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "lwbt-quad-gun",
+      "name": "LWBT Quad gun",
+      "points": 40,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "8\"",
+          "sourceText": "M 8\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 8,
+          "sourceText": "W 8"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "3+",
+          "sourceText": "SV 3+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 5,
+          "sourceText": "T 5"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Quad gun",
+          "kind": "ranged",
+          "range": "16\"",
+          "atk": "D3+2",
+          "hit": "4+",
+          "str": 5,
+          "aoe": "1\"",
+          "dmg": 2,
+          "notes": [],
+          "sourceText": "Quad gun | 16\" | D3+2 | 4+ | 5 | 1\" | 2"
+        }
+      ],
+      "tags": [],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "lwbt-quad-gun.png",
+      "sourceImageUrl": "./assets/source-cards/lwbt-quad-gun.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 4
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "breaker",
+      "name": "Breaker",
+      "points": 8,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "7\"",
+          "sourceText": "M 7\""
+        },
+        {
+          "key": "w",
+          "label": "W",
           "value": 4,
-          "sourceText": "T 4"
+          "sourceText": "W 4"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "4+",
+          "sourceText": "SV 4+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 3,
+          "sourceText": "T 3"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "6+",
+          "sourceText": "6+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Gun",
+          "kind": "ranged",
+          "range": "10\"",
+          "atk": "D3+1",
+          "hit": "3+",
+          "str": 3,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Gun | 10\" | D3+1 | 3+ | 3 | 0 | 1"
+        },
+        {
+          "name": "Knife",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 2,
+          "hit": "4+",
+          "str": 2,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Knife | 1\" | 2 | 4+ | 2 | 0 | 1"
+        },
+        {
+          "name": "Grenade",
+          "kind": "ranged",
+          "range": "7\"",
+          "atk": 1,
+          "hit": "4+",
+          "str": 8,
+          "aoe": "2\"",
+          "dmg": "D3+1",
+          "notes": [
+            "Limit 1"
+          ],
+          "sourceText": "Grenade | 7\" | 1 | 4+ | 8 | 2\" | D3+1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "breaker.png",
+      "sourceImageUrl": "./assets/source-cards/breaker.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 5
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "mercenary",
+      "name": "Mercenary",
+      "points": 12,
+      "maxPerSquad": 2,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "6\"",
+          "sourceText": "M 6\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 5,
+          "sourceText": "W 5"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "4+",
+          "sourceText": "SV 4+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 3,
+          "sourceText": "T 3"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
         },
         {
           "key": "stm",
@@ -120,304 +661,226 @@
       ],
       "defense": [
         {
-          "key": "sv",
-          "label": "SV",
-          "value": "3",
-          "sourceText": "SV 3"
-        },
-        {
-          "key": "sv-secondary",
-          "label": "SV?",
-          "value": "4+",
-          "sourceText": "4+"
-        },
-        {
-          "key": "sv-tertiary",
-          "label": "SV?",
+          "key": "ward",
+          "label": "Ward",
           "value": "6+",
           "sourceText": "6+"
         }
       ],
       "attacks": [
         {
-          "name": "Master glaive",
-          "kind": "melee",
-          "range": "2\"",
-          "atk": 5,
-          "hit": "3+",
-          "str": "4",
-          "aoe": "1\"",
-          "dmg": "2",
-          "notes": [],
-          "sourceText": "Master glaive | Atk 5 | Rng 2\" | Hit 3+ | Str 4 | AoE 1\" | Dmg 2"
-        }
-      ],
-      "tags": [
-        "Leader"
-      ],
-      "rulesText": [],
-      "sourceImage": "IMG_1039.JPG",
-      "sourceImageUrl": "./assets/source-cards/IMG_1039.JPG",
-      "verification": {
-        "status": "in_review",
-        "statusLabel": "Source unclear",
-        "updatedAt": "2026-04-01T20:30:00+00:00",
-        "sourceQuality": "poor",
-        "unresolvedFields": [
-          "stats[0].value",
-          "defense[1].label",
-          "defense[2].label"
-        ],
-        "notes": [
-          "The wounds value is obscured by the marker pen in the top-left stat row.",
-          "The extra defense boxes appear to read 4+ and 6+, but their handwritten meaning is not labeled."
-        ],
-        "fieldNotes": {
-          "stats[0].value": "The handwritten wounds value is overwritten and still unreadable from the current photo.",
-          "defense[1].label": "The 4+ defense box is visible, but its semantic label is not written on the card.",
-          "defense[2].label": "The 6+ defense box is visible, but its semantic label is not written on the card."
-        },
-        "reviewChecklist": {
-          "stats": false,
-          "defense": false,
-          "attacks": true,
-          "tags": true,
-          "rulesText": true
-        },
-        "hasUnresolvedFields": true,
-        "progress": {
-          "completed": 3,
-          "total": 5,
-          "percent": 60
-        }
-      }
-    },
-    {
-      "schemaVersion": 1,
-      "unitId": "glaives",
-      "name": "Glaives",
-      "maxPerSquad": null,
-      "stats": [
-        {
-          "key": "w",
-          "label": "W",
-          "value": 4,
-          "sourceText": "W 4"
-        },
-        {
-          "key": "m",
-          "label": "M",
-          "value": 7,
-          "sourceText": "M 7"
-        },
-        {
-          "key": "t",
-          "label": "T",
-          "value": 4,
-          "sourceText": "T 4"
-        },
-        {
-          "key": "stm",
-          "label": "STM",
-          "value": 2,
-          "sourceText": "STM 2"
-        }
-      ],
-      "defense": [
-        {
-          "key": "sv",
-          "label": "SV",
-          "value": "3",
-          "sourceText": "SV 3"
-        },
-        {
-          "key": "sv-secondary",
-          "label": "SV?",
-          "value": "4+",
-          "sourceText": "4+"
-        }
-      ],
-      "attacks": [
-        {
-          "name": "Glaive",
-          "kind": "melee",
-          "range": "1\"",
-          "atk": 2,
-          "hit": "3+",
-          "str": "4",
-          "aoe": "0\"",
-          "dmg": "1",
-          "notes": [
-            "The attack count is difficult to read and should be confirmed against the source card."
-          ],
-          "sourceText": "Glaive | Rng 1\" | Hit 3+ | Str 4 | AoE 0\" | Dmg 1 | Atk ?"
-        }
-      ],
-      "tags": [],
-      "rulesText": [],
-      "sourceImage": "IMG_1041.JPG",
-      "sourceImageUrl": "./assets/source-cards/IMG_1041.JPG",
-      "verification": {
-        "status": "in_review",
-        "statusLabel": "Source unclear",
-        "updatedAt": "2026-04-01T20:30:00+00:00",
-        "sourceQuality": "poor",
-        "unresolvedFields": [
-          "maxPerSquad",
-          "defense[1].label",
-          "attacks[0].atk"
-        ],
-        "notes": [
-          "The source photo does not clearly show a max squad size.",
-          "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
-        ],
-        "fieldNotes": {
-          "maxPerSquad": "No max squad value is legible in the current source image.",
-          "defense[1].label": "The 4+ defense box is visible, but its semantic label is not written on the card.",
-          "attacks[0].atk": "The glaive attack count mark is faint and still needs confirmation from a cleaner capture."
-        },
-        "reviewChecklist": {
-          "stats": true,
-          "defense": false,
-          "attacks": false,
-          "tags": true,
-          "rulesText": true
-        },
-        "hasUnresolvedFields": true,
-        "progress": {
-          "completed": 3,
-          "total": 5,
-          "percent": 60
-        }
-      }
-    },
-    {
-      "schemaVersion": 1,
-      "unitId": "gunner",
-      "name": "Gunner",
-      "maxPerSquad": 4,
-      "stats": [
-        {
-          "key": "w",
-          "label": "W",
-          "value": 4,
-          "sourceText": "W 4"
-        },
-        {
-          "key": "m",
-          "label": "M",
-          "value": 7,
-          "sourceText": "M 7"
-        },
-        {
-          "key": "t",
-          "label": "T",
-          "value": 4,
-          "sourceText": "T 4"
-        },
-        {
-          "key": "stm",
-          "label": "STM",
-          "value": 2,
-          "sourceText": "STM 2"
-        }
-      ],
-      "defense": [
-        {
-          "key": "sv",
-          "label": "SV",
-          "value": "3",
-          "sourceText": "SV 3"
-        },
-        {
-          "key": "sv-secondary",
-          "label": "SV?",
-          "value": "4+",
-          "sourceText": "4+"
-        }
-      ],
-      "attacks": [
-        {
           "name": "Gun",
           "kind": "ranged",
-          "range": "18\"",
-          "atk": 2,
+          "range": "12\"",
+          "atk": "D3+2",
           "hit": "3+",
-          "str": "8",
-          "aoe": "1\"",
-          "dmg": "D3",
+          "str": 4,
+          "aoe": "0",
+          "dmg": 1,
           "notes": [],
-          "sourceText": "Gun | Rng 18\" | Atk 2 | Hit 3+ | Str 8 | AoE 1\" | Dmg D3"
+          "sourceText": "Gun | 12\" | D3+2 | 3+ | 4 | 0 | 1"
         },
         {
           "name": "Knife",
           "kind": "melee",
           "range": "1\"",
+          "atk": 3,
+          "hit": "3+",
+          "str": 3,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Knife | 1\" | 3 | 3+ | 3 | 0 | 1"
+        },
+        {
+          "name": "Grenade",
+          "kind": "ranged",
+          "range": "7\"",
           "atk": 1,
           "hit": "4+",
-          "str": "3",
-          "aoe": "0\"",
-          "dmg": "1",
-          "notes": [],
-          "sourceText": "Knife | Rng 1\" | Atk 1 | Hit 4+ | Str 3 | AoE 0\" | Dmg 1"
+          "str": 8,
+          "aoe": "2\"",
+          "dmg": "D3+1",
+          "notes": [
+            "Limit 2"
+          ],
+          "sourceText": "Grenade | 7\" | 1 | 4+ | 8 | 2\" | D3+1"
         }
       ],
       "tags": [],
+      "specialRules": [
+        "Mercenary Cloak: Once per game when this model would be damaged, change the DMG characteristic of the attacking attack to half its original value (rounding down)."
+      ],
       "rulesText": [],
-      "sourceImage": "IMG_1040.JPG",
-      "sourceImageUrl": "./assets/source-cards/IMG_1040.JPG",
+      "sourceImage": "mercenary.png",
+      "sourceImageUrl": "./assets/source-cards/mercenary.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 6
+      },
       "verification": {
-        "status": "in_review",
-        "statusLabel": "Source unclear",
-        "updatedAt": "2026-04-01T20:30:00+00:00",
-        "sourceQuality": "poor",
-        "unresolvedFields": [
-          "defense[1].label"
-        ],
-        "notes": [
-          "The second defense box appears to read 4+, but the handwritten meaning of that box is not labeled."
-        ],
-        "fieldNotes": {
-          "defense[1].label": "The secondary defense value is visible, but the box label is missing from the source card."
-        },
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
         "reviewChecklist": {
           "stats": true,
-          "defense": false,
+          "defense": true,
           "attacks": true,
           "tags": true,
           "rulesText": true
         },
-        "hasUnresolvedFields": true,
+        "hasUnresolvedFields": false,
         "progress": {
-          "completed": 4,
+          "completed": 5,
           "total": 5,
-          "percent": 80
+          "percent": 100
         }
       }
     },
     {
       "schemaVersion": 1,
-      "unitId": "pistollier",
-      "name": "Pistollier",
-      "maxPerSquad": 3,
+      "unitId": "dreg-captain",
+      "name": "Dreg captain",
+      "points": 14,
+      "maxPerSquad": null,
       "stats": [
-        {
-          "key": "w",
-          "label": "W",
-          "value": 4,
-          "sourceText": "W 4"
-        },
         {
           "key": "m",
           "label": "M",
-          "value": 7,
-          "sourceText": "M 7"
+          "value": "6\"",
+          "sourceText": "M 6\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 5,
+          "sourceText": "W 5"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "4+",
+          "sourceText": "SV 4+"
         },
         {
           "key": "t",
           "label": "T",
-          "value": 4,
-          "sourceText": "T 4"
+          "value": 3,
+          "sourceText": "T 3"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 3,
+          "sourceText": "STM 3"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Blunt weapon",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 4,
+          "hit": "3+",
+          "str": 4,
+          "aoe": "1\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Blunt weapon | 1\" | 4 | 3+ | 4 | 1\" | 1"
+        }
+      ],
+      "tags": [
+        "Leader"
+      ],
+      "specialRules": [
+        "Dreg leader: When giving units their STM for the turn you may select 1 friendly model within 6\" of this model. That model gains 1 extra STM point. This model cannot give itself the extra STM."
+      ],
+      "rulesText": [],
+      "sourceImage": "dreg-captain.png",
+      "sourceImageUrl": "./assets/source-cards/dreg-captain.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 7
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "skrap",
+      "name": "Skrap",
+      "points": 5,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "6\"",
+          "sourceText": "M 6\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 2,
+          "sourceText": "W 2"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "5+",
+          "sourceText": "SV 5+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 2,
+          "sourceText": "T 2"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
         },
         {
           "key": "stm",
@@ -426,123 +889,524 @@
           "sourceText": "STM 2"
         }
       ],
-      "defense": [
+      "defense": [],
+      "attacks": [
+        {
+          "name": "Melee weapon",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 2,
+          "hit": "4+",
+          "str": 2,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Melee weapon | 1\" | 2 | 4+ | 2 | 0\" | 1"
+        },
+        {
+          "name": "Scrap piston",
+          "kind": "ranged",
+          "range": "7\"",
+          "atk": "D3",
+          "hit": "4+",
+          "str": 3,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Scrap piston | 7\" | D3 | 4+ | 3 | 0\" | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [
+        "Skrap ammo: When a Pistolier is within 1\" of this model, this model may give its ammo to the Pistolier. The Pistolier loses one ammunition token and this model gains an ammunition token."
+      ],
+      "rulesText": [],
+      "sourceImage": "skrap.png",
+      "sourceImageUrl": "./assets/source-cards/skrap.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 8
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "glaive",
+      "name": "Glaive",
+      "points": 10,
+      "maxPerSquad": 5,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "7\"",
+          "sourceText": "M 7\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 4,
+          "sourceText": "W 4"
+        },
         {
           "key": "sv",
           "label": "SV",
-          "value": "3",
-          "sourceText": "SV 3"
+          "value": "4+",
+          "sourceText": "SV 4+"
         },
         {
-          "key": "sv-secondary",
-          "label": "SV?",
+          "key": "t",
+          "label": "T",
+          "value": 4,
+          "sourceText": "T 4"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [],
+      "attacks": [
+        {
+          "name": "Glaive",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 4,
+          "hit": "4+",
+          "str": 4,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Glaive | 1\" | 4 | 4+ | 4 | 0\" | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "glaive.png",
+      "sourceImageUrl": "./assets/source-cards/glaive.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 9
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "champion",
+      "name": "Champion",
+      "points": 20,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "7\"",
+          "sourceText": "M 7\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 5,
+          "sourceText": "W 5"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
           "value": "4+",
-          "sourceText": "4+"
+          "sourceText": "SV 4+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 4,
+          "sourceText": "T 4"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 3,
+          "sourceText": "STM 3"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "6+",
+          "sourceText": "6+"
         }
       ],
       "attacks": [
         {
-          "name": "1 pistol",
-          "kind": "ranged",
-          "range": "12\"",
-          "atk": 4,
+          "name": "Master Glaive",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 5,
           "hit": "3+",
-          "str": null,
-          "aoe": "0",
-          "dmg": "1",
+          "str": 5,
+          "aoe": "1\"",
+          "dmg": 2,
           "notes": [],
-          "sourceText": "1 pistol | Rng 12\" | Atk 4 | Hit 3+ | AoE 0 | Dmg 1 | Str ?"
+          "sourceText": "Master Glaive | 1\" | 5 | 3+ | 5 | 1\" | 2"
+        }
+      ],
+      "tags": [
+        "Leader"
+      ],
+      "specialRules": [
+        "Warcry: Once per game when this model destroys your opponent's Leader model, all remaining friendly models gain 1 STM and all enemy models within 6\" lose 1 STM."
+      ],
+      "rulesText": [],
+      "sourceImage": "champion.png",
+      "sourceImageUrl": "./assets/source-cards/champion.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 10
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "pistolier",
+      "name": "Pistolier",
+      "points": 10,
+      "maxPerSquad": 3,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "7\"",
+          "sourceText": "M 7\""
         },
         {
-          "name": "2 pistol",
+          "key": "w",
+          "label": "W",
+          "value": 4,
+          "sourceText": "W 4"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "4+",
+          "sourceText": "SV 4+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 4,
+          "sourceText": "T 4"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [],
+      "attacks": [
+        {
+          "name": "Pistol 1",
           "kind": "ranged",
-          "range": "12\"",
+          "range": "9\"",
           "atk": 4,
-          "hit": "3+",
-          "str": null,
-          "aoe": "0",
-          "dmg": "1",
+          "hit": "4+",
+          "str": 3,
+          "aoe": "0\"",
+          "dmg": 1,
           "notes": [],
-          "sourceText": "2 pistol | Rng 12\" | Atk 4 | Hit 3+ | AoE 0 | Dmg 1 | Str ?"
+          "sourceText": "Pistol 1 | 9\" | 4 | 4+ | 3 | 0\" | 1"
+        },
+        {
+          "name": "Pistol 2",
+          "kind": "ranged",
+          "range": "9\"",
+          "atk": 4,
+          "hit": "4+",
+          "str": 3,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Pistol 2 | 9\" | 4 | 4+ | 3 | 0\" | 1"
         },
         {
           "name": "Fists",
           "kind": "melee",
-          "range": null,
-          "atk": 2,
+          "range": "1\"",
+          "atk": "D3",
           "hit": "5+",
-          "str": null,
-          "aoe": "0",
-          "dmg": "1",
-          "notes": [
-            "The melee row is partially obscured in the photo."
-          ],
-          "sourceText": "Fists | Atk 2 | Hit 5+ | AoE 0 | Dmg 1 | Rng ? | Str ?"
+          "str": 3,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Fists | 1\" | D3 | 5+ | 3 | 0\" | 1"
         }
       ],
       "tags": [],
+      "specialRules": [
+        "Dual wield: This model can shoot both its Pistol 1 and Pistol 2 for the cost of 1 STM. Both need an ammo check."
+      ],
       "rulesText": [],
-      "sourceImage": "IMG_1038.JPG",
-      "sourceImageUrl": "./assets/source-cards/IMG_1038.JPG",
+      "sourceImage": "pistolier.png",
+      "sourceImageUrl": "./assets/source-cards/pistolier.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 11
+      },
       "verification": {
-        "status": "in_review",
-        "statusLabel": "Source unclear",
-        "updatedAt": "2026-04-01T20:30:00+00:00",
-        "sourceQuality": "poor",
-        "unresolvedFields": [
-          "defense[1].label",
-          "attacks[0].str",
-          "attacks[1].str",
-          "attacks[2].range",
-          "attacks[2].str"
-        ],
-        "notes": [
-          "Second defense box appears to read 4+, but the handwritten meaning of that box is not labeled.",
-          "The pistol rows do not clearly show a Strength column in the source photo."
-        ],
-        "fieldNotes": {
-          "defense[1].label": "The secondary defense value is visible, but the box label is missing from the source card.",
-          "attacks[0].str": "The first pistol row does not show a legible Strength value in the source image.",
-          "attacks[1].str": "The second pistol row does not show a legible Strength value in the source image.",
-          "attacks[2].range": "The melee fists row is partially cropped, so the range indicator is unclear.",
-          "attacks[2].str": "The melee fists row is partially cropped, so the Strength value is unclear."
-        },
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
         "reviewChecklist": {
           "stats": true,
-          "defense": false,
-          "attacks": false,
+          "defense": true,
+          "attacks": true,
           "tags": true,
           "rulesText": true
         },
-        "hasUnresolvedFields": true,
+        "hasUnresolvedFields": false,
         "progress": {
-          "completed": 3,
+          "completed": 5,
           "total": 5,
-          "percent": 60
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "rampager",
+      "name": "Rampager",
+      "points": 16,
+      "maxPerSquad": 2,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "9\"",
+          "sourceText": "M 9\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 3,
+          "sourceText": "W 3"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "5+",
+          "sourceText": "SV 5+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 3,
+          "sourceText": "T 3"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 3,
+          "sourceText": "STM 3"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Hand Glaive 1",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 3,
+          "hit": "3+",
+          "str": 5,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Hand Glaive 1 | 1\" | 3 | 3+ | 5 | 0\" | 1"
+        },
+        {
+          "name": "Hand Glaive 2",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 3,
+          "hit": "3+",
+          "str": 5,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Hand Glaive 2 | 1\" | 3 | 3+ | 5 | 0\" | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [
+        "Unpredictable: When this model is selected to move, roll a D6. On a 1 this model cannot move. On a 6 this model can move for 0 STM.",
+        "Hand Glaives: When this model attacks for melee it can make up to 2 separate melee attacks instead of just 1 in a single activation."
+      ],
+      "rulesText": [],
+      "sourceImage": "rampager.png",
+      "sourceImageUrl": "./assets/source-cards/rampager.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 12
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
         }
       }
     }
   ],
   "assetIndex": {
-    "champion": "./assets/source-cards/IMG_1039.JPG",
-    "glaives": "./assets/source-cards/IMG_1041.JPG",
-    "gunner": "./assets/source-cards/IMG_1040.JPG",
-    "pistollier": "./assets/source-cards/IMG_1038.JPG"
+    "dreg": "./assets/source-cards/dreg.png",
+    "lwbt-transport": "./assets/source-cards/lwbt-transport.png",
+    "lwbt-heavy-weapon": "./assets/source-cards/lwbt-heavy-weapon.png",
+    "lwbt-quad-gun": "./assets/source-cards/lwbt-quad-gun.png",
+    "breaker": "./assets/source-cards/breaker.png",
+    "mercenary": "./assets/source-cards/mercenary.png",
+    "dreg-captain": "./assets/source-cards/dreg-captain.png",
+    "skrap": "./assets/source-cards/skrap.png",
+    "glaive": "./assets/source-cards/glaive.png",
+    "champion": "./assets/source-cards/champion.png",
+    "pistolier": "./assets/source-cards/pistolier.png",
+    "rampager": "./assets/source-cards/rampager.png"
   },
   "verificationSummary": {
     "statusCounts": {
-      "in_review": 4,
+      "in_review": 0,
       "unverified": 0,
-      "verified": 0
+      "verified": 12
     },
     "sourceQualityCounts": {
       "fair": 0,
-      "good": 0,
-      "poor": 4
+      "good": 12,
+      "poor": 0
     },
-    "unresolvedFieldTotal": 12,
-    "fullyVerifiedCount": 0,
-    "inReviewCount": 4,
+    "unresolvedFieldTotal": 0,
+    "fullyVerifiedCount": 12,
+    "inReviewCount": 0,
     "unverifiedCount": 0
   }
 }

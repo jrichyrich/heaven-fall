@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "unitId": "lwbt-heavy-weapon",
+  "name": "LWBT Heavy weapon",
+  "points": 50,
+  "maxPerSquad": null,
+  "stats": [
+    { "key": "m", "label": "M", "value": "8\"", "sourceText": "M 8\"" },
+    { "key": "w", "label": "W", "value": 8, "sourceText": "W 8" },
+    { "key": "sv", "label": "SV", "value": "3+", "sourceText": "SV 3+" },
+    { "key": "t", "label": "T", "value": 5, "sourceText": "T 5" },
+    { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
+    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+  ],
+  "defense": [
+    { "key": "ward", "label": "Ward", "value": "5+", "sourceText": "5+" }
+  ],
+  "attacks": [
+    {
+      "name": "Heavy gun",
+      "kind": "ranged",
+      "range": "20\"",
+      "atk": 1,
+      "hit": "4+",
+      "str": 10,
+      "aoe": "2\"",
+      "dmg": "D3+1",
+      "notes": [],
+      "sourceText": "Heavy gun | 20\" | 1 | 4+ | 10 | 2\" | D3+1"
+    }
+  ],
+  "tags": [],
+  "specialRules": [],
+  "rulesText": [],
+  "source": {
+    "type": "pdf_page",
+    "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+    "page": 3
+  },
+  "verification": {
+    "status": "verified",
+    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "sourceQuality": "good",
+    "unresolvedFields": [],
+    "notes": [],
+    "fieldNotes": {},
+    "reviewChecklist": {
+      "stats": true,
+      "defense": true,
+      "attacks": true,
+      "tags": true,
+      "rulesText": true
+    }
+  }
+}

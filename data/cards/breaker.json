@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "unitId": "breaker",
+  "name": "Breaker",
+  "points": 8,
+  "maxPerSquad": null,
+  "stats": [
+    { "key": "m", "label": "M", "value": "7\"", "sourceText": "M 7\"" },
+    { "key": "w", "label": "W", "value": 4, "sourceText": "W 4" },
+    { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
+    { "key": "t", "label": "T", "value": 3, "sourceText": "T 3" },
+    { "key": "sd", "label": "SD", "value": 2, "sourceText": "SD 2" },
+    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+  ],
+  "defense": [
+    { "key": "ward", "label": "Ward", "value": "6+", "sourceText": "6+" }
+  ],
+  "attacks": [
+    {
+      "name": "Gun",
+      "kind": "ranged",
+      "range": "10\"",
+      "atk": "D3+1",
+      "hit": "3+",
+      "str": 3,
+      "aoe": "0",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Gun | 10\" | D3+1 | 3+ | 3 | 0 | 1"
+    },
+    {
+      "name": "Knife",
+      "kind": "melee",
+      "range": "1\"",
+      "atk": 2,
+      "hit": "4+",
+      "str": 2,
+      "aoe": "0",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Knife | 1\" | 2 | 4+ | 2 | 0 | 1"
+    },
+    {
+      "name": "Grenade",
+      "kind": "ranged",
+      "range": "7\"",
+      "atk": 1,
+      "hit": "4+",
+      "str": 8,
+      "aoe": "2\"",
+      "dmg": "D3+1",
+      "notes": ["Limit 1"],
+      "sourceText": "Grenade | 7\" | 1 | 4+ | 8 | 2\" | D3+1"
+    }
+  ],
+  "tags": [],
+  "specialRules": [],
+  "rulesText": [],
+  "source": {
+    "type": "pdf_page",
+    "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+    "page": 5
+  },
+  "verification": {
+    "status": "verified",
+    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "sourceQuality": "good",
+    "unresolvedFields": [],
+    "notes": [],
+    "fieldNotes": {},
+    "reviewChecklist": {
+      "stats": true,
+      "defense": true,
+      "attacks": true,
+      "tags": true,
+      "rulesText": true
+    }
+  }
+}
