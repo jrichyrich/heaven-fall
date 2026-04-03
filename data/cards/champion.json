@@ -5,15 +5,50 @@
   "points": 20,
   "maxPerSquad": null,
   "stats": [
-    { "key": "m", "label": "M", "value": "7\"", "sourceText": "M 7\"" },
-    { "key": "w", "label": "W", "value": 5, "sourceText": "W 5" },
-    { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
-    { "key": "t", "label": "T", "value": 4, "sourceText": "T 4" },
-    { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
-    { "key": "stm", "label": "STM", "value": 3, "sourceText": "STM 3" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "7\"",
+      "sourceText": "M 7\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 5,
+      "sourceText": "W 5"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "4+",
+      "sourceText": "SV 4+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 4,
+      "sourceText": "T 4"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 3,
+      "sourceText": "SD 3"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 3,
+      "sourceText": "STM 3"
+    }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "6+", "sourceText": "6+" }
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "6+",
+      "sourceText": "6+"
+    }
   ],
   "attacks": [
     {
@@ -29,7 +64,9 @@
       "sourceText": "Master Glaive | 1\" | 5 | 3+ | 5 | 1\" | 2"
     }
   ],
-  "tags": ["Leader"],
+  "tags": [
+    "Leader"
+  ],
   "specialRules": [
     "Warcry: Once per game when this model destroys your opponent's Leader model, all remaining friendly models gain 1 STM and all enemy models within 6\" lose 1 STM."
   ],
@@ -37,11 +74,11 @@
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 10
+    "page": 12
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],

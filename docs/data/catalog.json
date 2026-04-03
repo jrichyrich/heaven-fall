@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "Heaven Fall Card Library",
-  "generatedAt": "2026-04-02T02:27:05+00:00",
+  "generatedAt": "2026-04-03T02:51:13+00:00",
   "rules": [
     {
       "id": "core-rules",
@@ -11,14 +11,14 @@
           "id": "ammo",
           "title": "Ammo",
           "body": [
-            "Each turn when a weapon with 3+ inches of range makes a attack: after resolving the attack roll 1 D6 on a 3+ the weapon has passed the ammo check, on a 1 or a 2 place a ammunition marker next to them to simbolise that they have ran out of ammunition."
+            "Each turn when a weapon with 3+ inches of range makes an attack, after resolving the attack roll 1 D6. On a 2+ the weapon passes the ammo check. Otherwise place an ammunition marker next to the model to symbolize that it has run out of ammunition."
           ]
         },
         {
           "id": "cover",
           "title": "Cover",
           "body": [
-            "When a model is obscured or has a piece of terran blocking the sights of the attacker then that unit is considered in cover, while in cover the following benefits take action:",
+            "When a model is obscured or has a piece of terrain blocking the sights of the attacker then that unit is considered in cover. While in cover the following benefits apply:",
             "-1 to be hit",
             "+1 to save dice"
           ]
@@ -27,7 +27,10 @@
           "id": "cells",
           "title": "Cells",
           "body": [
-            "At the start of each players turn that player gains 1 cell (this can be altered by abilities) The player can have up to a maximum of 5 cell points, once 5 has been reached the player must remove 1 STM from each unit under there control. To a minimum of 0"
+            "At the start of each player turn that player gains 1 cell if at least one model has any STM. This can be altered by abilities.",
+            "The player can have up to a maximum of 5 cell points. Once 5 has been reached the player must remove 1 STM from each unit under their control, to a minimum of 0.",
+            "Cells can also be obtained by destroying enemy models. Each enemy model destroyed is 1 cell point gained.",
+            "If you have 0-1 cells remaining all your units have -1 to their hit rolls."
           ]
         }
       ]
@@ -40,47 +43,258 @@
           "id": "strains",
           "title": "Strains",
           "body": [
-            "The following will be abilites that are universal strains for units to use, each strain will specify how much Cells are needed to use it",
-            "Reroll- 1 cell",
-            "Cover fire- 2 cells",
-            "Chill- 1 cell",
-            "Burn- 1 cell"
+            "The following are universal strains for units to use. Each strain specifies how many cells are needed to use it.",
+            "Reroll - 1 cell",
+            "Cover fire - 2 cells",
+            "Chill - 1 cell",
+            "Burn - 1 cell",
+            "Shuffle - 2 cells",
+            "Reinforcements - 5 cells"
           ]
         },
         {
           "id": "reroll",
           "title": "Reroll",
           "body": [
-            "Reroll -1 cell",
-            "At the start of your turn you may use this",
-            "Roll 1 D3, that number is the number of dice you may reroll this turn."
+            "At the start of your turn you may use this strain.",
+            "Roll 1 D3. That number is the number of dice you may reroll this turn."
           ]
         },
         {
           "id": "cover-fire",
           "title": "Cover fire",
           "body": [
-            "Cover fire -2 cells",
-            "When your opponent moves a enemy within 12 inches of a friendly model.",
-            "That friendly model may make a normal move. After that model has made a normal move you may select another model that also withing 12 inches and has line of sight of the enemy model, that model may shoot at the enemy model if they are an elegible target."
+            "When your opponent moves an enemy within 12 inches of a friendly model, that friendly model may make a normal move.",
+            "After that model has made a normal move you may select another model that is also within 12 inches and has line of sight of the enemy model. That model may shoot at the enemy model if they are an eligible target."
           ]
         },
         {
           "id": "chill",
           "title": "Chill",
           "body": [
-            "Chill -1 cell",
-            "When a friendly unit would be destroyed you may use this (excluding Vehicles)",
-            "All there remaining STM is lost and there remaining wounds is changed to 1"
+            "When a friendly unit would be destroyed you may use this strain, excluding vehicles.",
+            "All their remaining STM is lost and their remaining wounds are changed to 1."
           ]
         },
         {
           "id": "burn",
           "title": "Burn",
           "body": [
-            "Burn -1 cell",
-            "When a friendly unit would be destroyed you may use this (excluding Vehicles)",
-            "Before the model is removed it may make 2 STM actions (not of the same action) before dying."
+            "When a friendly unit would be destroyed you may use this strain, excluding vehicles.",
+            "Before the model is removed it may make 2 STM actions, not of the same action, before dying."
+          ]
+        },
+        {
+          "id": "shuffle",
+          "title": "Shuffle",
+          "body": [
+            "Move a model 1\"."
+          ]
+        },
+        {
+          "id": "reinforcements",
+          "title": "Reinforcements",
+          "body": [
+            "Select the equivalent of up to 6 wounds of dead models and put them back on the table within 2\" of each other and 2\" of your side of the board.",
+            "You cannot add leaders again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "actions",
+      "title": "Actions",
+      "sections": [
+        {
+          "id": "actions-costs",
+          "title": "Actions",
+          "body": [
+            "Normal move - 1 STM",
+            "Attack - 1 STM",
+            "Charge - 1 STM",
+            "Mission action - 1 STM",
+            "Close combat - 1 STM"
+          ]
+        },
+        {
+          "id": "actions-reference",
+          "title": "Actions",
+          "body": [
+            "Normal move: that model may move up to their move characteristic.",
+            "Attack: select a weapon that the model is equipped with and has 3+ range. That model may make an attack with that weapon.",
+            "Charge: select an enemy model within 6in of that model. Roll 1 D6. If the result is equal to or greater than the distance between the 2 models the charge is successful and does not require STM. If it fails they still move but lose 1 STM.",
+            "Mission action: the mission action is specified on the mission rules.",
+            "Close combat: select a weapon with less than 3in of range and make an attack with that weapon."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weapons-reference",
+      "title": "Weapons Reference",
+      "sections": [
+        {
+          "id": "weapons",
+          "title": "Weapons",
+          "body": [
+            "RNG: how close the target must be. 3+ inches is a ranged weapon. 1 or 2 inches is a melee weapon.",
+            "ATK: how many dice you roll for the attack.",
+            "HIT: the result needed on the dice for a hit.",
+            "STR: for each 2 STR more than the toughness the opponent rolls 1 less SD. For each 2 STR less than the toughness the opponent rolls 1 more SD.",
+            "AOE: after deciding the fate of the original target roll for all models, friendly and enemy, from the original target point of view. Melee weapons are different: roll for everyone within AOE range of the initial target from the attacker perspective.",
+            "DMG: how much damage each successful wound does."
+          ]
+        }
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "id": "houno",
+      "title": "Houno",
+      "sections": [
+        {
+          "id": "voice-of-command",
+          "title": "Voice of command",
+          "body": [
+            "While there is a leader on the battlefield, each turn you choose between gaining or losing 1 cell."
+          ]
+        },
+        {
+          "id": "we-shall-overcome",
+          "title": "We shall overcome",
+          "body": [
+            "For 1 cell select a model that is making a save. You may add 1 to that model's SD characteristic for the purpose of saving against that attack."
+          ]
+        },
+        {
+          "id": "our-kingdom",
+          "title": "Our kingdom",
+          "body": [
+            "For 2 cells at the start of your turn you can use this. If you do, whenever a friendly Dreg unit dies roll 1 D6. On a 5+ they have 1 wound left."
+          ]
+        },
+        {
+          "id": "born-ready",
+          "title": "Born ready",
+          "body": [
+            "For 1 cell improve the Hit characteristic of a model by 1 for 1 activation."
+          ]
+        },
+        {
+          "id": "heavens-allies",
+          "title": "Heavens allies",
+          "body": [
+            "Alliance: You may add up to 3 LWBT models of any variant to your army. You may also add up to 5 Breaker models. You still have to pay their points."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sakaai",
+      "title": "Sakaai",
+      "sections": [
+        {
+          "id": "jackals",
+          "title": "Jackals",
+          "body": [
+            "Whenever a model is performing the charge action you may reroll the charge roll but subtract 1 from the roll."
+          ]
+        },
+        {
+          "id": "twisted-joy",
+          "title": "Twisted Joy",
+          "body": [
+            "For 2 cells at the start of your turn you can activate this. Whenever a friendly unit destroys an enemy unit that model regains 1 wound."
+          ]
+        },
+        {
+          "id": "bionik-surge",
+          "title": "Bionik Surge",
+          "body": [
+            "For 1 cell select 1 friendly unit, excluding Skraps. That model gains +2 M for 1 movement."
+          ]
+        },
+        {
+          "id": "diskarded",
+          "title": "Diskarded",
+          "body": [
+            "For 1 cell when a friendly unit is about to be attacked by a ranged attack you can select 1 Skrap model within 4\". The Skrap is the new target of the weapon."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shango",
+      "title": "Shango",
+      "sections": [
+        {
+          "id": "mechanical-engineers",
+          "title": "Mechanical engineers",
+          "body": [
+            "Vehicle models regain 1 wound each time they are activated."
+          ]
+        },
+        {
+          "id": "indestructible",
+          "title": "Indestructible",
+          "body": [
+            "When a vehicle model is destroyed you may use 2 cells to bring it back. It must be redeployed and comes back with D6 wounds remaining."
+          ]
+        },
+        {
+          "id": "humans-are-cheep",
+          "title": "Humans are cheep",
+          "body": [
+            "Whenever an infantry model is destroyed you may use a cell to bring them back. When coming back they must be redeployed."
+          ]
+        },
+        {
+          "id": "will-of-steal",
+          "title": "Will of steal",
+          "body": [
+            "While infantry models are shooting, if they are within 6\" of a vehicle you may spend 1 cell. That infantry now has D3 extra ATK for one activation."
+          ]
+        },
+        {
+          "id": "heavens-allies",
+          "title": "Heavens allies",
+          "body": [
+            "Alliance: You may add up to 1 Mercenary in your army. You may also add up to 10 Dreg models. You still have to pay their points."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syksy",
+      "title": "Syksy",
+      "sections": [
+        {
+          "id": "born-shadow",
+          "title": "Born shadow",
+          "body": [
+            "When a model is within cover it cannot be targeted by a ranged attack."
+          ]
+        },
+        {
+          "id": "never-even-there",
+          "title": "Never even there",
+          "body": [
+            "For 1 cell you may select a model that was just destroyed by a ranged attack and was by cover. If the attack was made from 10\" away or more do not remove the model. Instead move it 3\" but stay within range of the cover."
+          ]
+        },
+        {
+          "id": "precision-rifles",
+          "title": "Precision Rifles",
+          "body": [
+            "For 1 cell you may target a leader unit with a ranged attack for 0 STM."
+          ]
+        },
+        {
+          "id": "fade",
+          "title": "Fade",
+          "body": [
+            "For 2 cells you may select 1 model with at least 1 STM left. You may move that unit anywhere that is within 1\" of terrain and 9\" away from opponents."
           ]
         }
       ]
@@ -89,40 +303,40 @@
   "units": [
     {
       "schemaVersion": 1,
-      "unitId": "dreg",
-      "name": "Dreg",
-      "points": 4,
+      "unitId": "lwbt-quad-gun",
+      "name": "LWBT Quad gun",
+      "points": 40,
       "maxPerSquad": null,
       "stats": [
         {
           "key": "m",
           "label": "M",
-          "value": "6\"",
-          "sourceText": "M 6\""
+          "value": "8\"",
+          "sourceText": "M 8\""
         },
         {
           "key": "w",
           "label": "W",
-          "value": 3,
-          "sourceText": "W 3"
+          "value": 8,
+          "sourceText": "W 8"
         },
         {
           "key": "sv",
           "label": "SV",
-          "value": "4+",
-          "sourceText": "SV 4+"
+          "value": "3+",
+          "sourceText": "SV 3+"
         },
         {
           "key": "t",
           "label": "T",
-          "value": 2,
-          "sourceText": "T 2"
+          "value": 5,
+          "sourceText": "T 5"
         },
         {
           "key": "sd",
           "label": "SD",
-          "value": 2,
-          "sourceText": "SD 2"
+          "value": 3,
+          "sourceText": "SD 3"
         },
         {
           "key": "stm",
@@ -131,38 +345,35 @@
           "sourceText": "STM 2"
         }
       ],
-      "defense": [],
-      "attacks": [
+      "defense": [
         {
-          "name": "Gun",
-          "kind": "ranged",
-          "range": "12\"",
-          "atk": "D3",
-          "hit": "4+",
-          "str": 3,
-          "aoe": "0",
-          "dmg": 1,
-          "notes": [],
-          "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
-        },
-        {
-          "name": "Knife",
-          "kind": "melee",
-          "range": "1\"",
-          "atk": 2,
-          "hit": "4+",
-          "str": 2,
-          "aoe": "0",
-          "dmg": 1,
-          "notes": [],
-          "sourceText": "Knife | 1\" | 2 | 4+ | 2 | 0 | 1"
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
         }
       ],
-      "tags": [],
+      "attacks": [
+        {
+          "name": "Quad gun",
+          "kind": "ranged",
+          "range": "16\"",
+          "atk": "D3+2",
+          "hit": "4+",
+          "str": 5,
+          "aoe": "1\"",
+          "dmg": 2,
+          "notes": [],
+          "sourceText": "Quad gun | 16\" | D3+2 | 4+ | 5 | 1\" | 2"
+        }
+      ],
+      "tags": [
+        "Vehicle"
+      ],
       "specialRules": [],
       "rulesText": [],
-      "sourceImage": "dreg.png",
-      "sourceImageUrl": "./assets/source-cards/dreg.png",
+      "sourceImage": "lwbt-quad-gun.png",
+      "sourceImageUrl": "./assets/source-cards/lwbt-quad-gun.png",
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
@@ -171,7 +382,7 @@
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -257,7 +468,9 @@
           "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
         }
       ],
-      "tags": [],
+      "tags": [
+        "Vehicle"
+      ],
       "specialRules": [
         "Transport: This model can transport up to 4 space-dreg (1 space) and Breaker (2 space)."
       ],
@@ -272,7 +485,7 @@
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -296,7 +509,7 @@
       "schemaVersion": 1,
       "unitId": "lwbt-heavy-weapon",
       "name": "LWBT Heavy weapon",
-      "points": 50,
+      "points": 45,
       "maxPerSquad": null,
       "stats": [
         {
@@ -358,7 +571,9 @@
           "sourceText": "Heavy gun | 20\" | 1 | 4+ | 10 | 2\" | D3+1"
         }
       ],
-      "tags": [],
+      "tags": [
+        "Vehicle"
+      ],
       "specialRules": [],
       "rulesText": [],
       "sourceImage": "lwbt-heavy-weapon.png",
@@ -371,7 +586,7 @@
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -393,75 +608,59 @@
     },
     {
       "schemaVersion": 1,
-      "unitId": "lwbt-quad-gun",
-      "name": "LWBT Quad gun",
-      "points": 40,
+      "unitId": "ammo-cache",
+      "name": "Ammo cache",
+      "points": 1,
       "maxPerSquad": null,
       "stats": [
         {
           "key": "m",
           "label": "M",
-          "value": "8\"",
-          "sourceText": "M 8\""
+          "value": "-",
+          "sourceText": "M -"
         },
         {
           "key": "w",
           "label": "W",
-          "value": 8,
-          "sourceText": "W 8"
+          "value": "-",
+          "sourceText": "W -"
         },
         {
           "key": "sv",
           "label": "SV",
-          "value": "3+",
-          "sourceText": "SV 3+"
+          "value": "-",
+          "sourceText": "SV -"
         },
         {
           "key": "t",
           "label": "T",
-          "value": 5,
-          "sourceText": "T 5"
+          "value": "-",
+          "sourceText": "T -"
         },
         {
           "key": "sd",
           "label": "SD",
-          "value": 3,
-          "sourceText": "SD 3"
+          "value": "-",
+          "sourceText": "SD -"
         },
         {
           "key": "stm",
           "label": "STM",
-          "value": 2,
-          "sourceText": "STM 2"
+          "value": "-",
+          "sourceText": "STM -"
         }
       ],
-      "defense": [
-        {
-          "key": "ward",
-          "label": "Ward",
-          "value": "5+",
-          "sourceText": "5+"
-        }
+      "defense": [],
+      "attacks": [],
+      "tags": [
+        "Deployable"
       ],
-      "attacks": [
-        {
-          "name": "Quad gun",
-          "kind": "ranged",
-          "range": "16\"",
-          "atk": "D3+2",
-          "hit": "4+",
-          "str": 5,
-          "aoe": "1\"",
-          "dmg": 2,
-          "notes": [],
-          "sourceText": "Quad gun | 16\" | D3+2 | 4+ | 5 | 1\" | 2"
-        }
+      "specialRules": [
+        "Ammo Cache: Once per game this model can select an infantry model within 1\" of this model. When it does this model is destroyed and you can clear any ammunition tokens on the model within 1\"."
       ],
-      "tags": [],
-      "specialRules": [],
       "rulesText": [],
-      "sourceImage": "lwbt-quad-gun.png",
-      "sourceImageUrl": "./assets/source-cards/lwbt-quad-gun.png",
+      "sourceImage": "ammo-cache.png",
+      "sourceImageUrl": "./assets/source-cards/ammo-cache.png",
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
@@ -470,7 +669,111 @@
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "dreg",
+      "name": "Dreg",
+      "points": 4,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "6\"",
+          "sourceText": "M 6\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 3,
+          "sourceText": "W 3"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "4+",
+          "sourceText": "SV 4+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 2,
+          "sourceText": "T 2"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [],
+      "attacks": [
+        {
+          "name": "Gun",
+          "kind": "ranged",
+          "range": "12\"",
+          "atk": "D3",
+          "hit": "4+",
+          "str": 3,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
+        },
+        {
+          "name": "Knife",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 2,
+          "hit": "4+",
+          "str": 2,
+          "aoe": "0",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Knife | 1\" | 2 | 4+ | 2 | 0 | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "dreg.png",
+      "sourceImageUrl": "./assets/source-cards/dreg.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 6
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -590,12 +893,12 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 5
+        "page": 7
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -619,7 +922,7 @@
       "schemaVersion": 1,
       "unitId": "mercenary",
       "name": "Mercenary",
-      "points": 12,
+      "points": 19,
       "maxPerSquad": 2,
       "stats": [
         {
@@ -637,8 +940,8 @@
         {
           "key": "sv",
           "label": "SV",
-          "value": "4+",
-          "sourceText": "SV 4+"
+          "value": "5+",
+          "sourceText": "SV 5+"
         },
         {
           "key": "t",
@@ -709,7 +1012,7 @@
       ],
       "tags": [],
       "specialRules": [
-        "Mercenary Cloak: Once per game when this model would be damaged, change the DMG characteristic of the attacking attack to half its original value (rounding down)."
+        "Mercenary Cloak: Once per game when this model would be damaged, change the DMG characteristic of the attacking attack to half its original value, rounding down."
       ],
       "rulesText": [],
       "sourceImage": "mercenary.png",
@@ -717,12 +1020,12 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 6
+        "page": 8
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -820,12 +1123,12 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 7
+        "page": 9
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -918,7 +1221,7 @@
       ],
       "tags": [],
       "specialRules": [
-        "Skrap ammo: When a Pistolier is within 1\" of this model, this model may give its ammo to the Pistolier. The Pistolier loses one ammunition token and this model gains an ammunition token."
+        "Skrap ammo: When a Pistolier is within 1\" of this model, this model may give its ammo to the Pistolier. The Pistolier loses one of its ammunition tokens and this model gains an ammunition token."
       ],
       "rulesText": [],
       "sourceImage": "skrap.png",
@@ -926,12 +1229,12 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 8
+        "page": 10
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -1018,12 +1321,12 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 9
+        "page": 11
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -1121,12 +1424,12 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 10
+        "page": 12
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -1239,12 +1542,12 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 11
+        "page": 13
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -1344,7 +1647,7 @@
       ],
       "tags": [],
       "specialRules": [
-        "Unpredictable: When this model is selected to move, roll a D6. On a 1 this model cannot move. On a 6 this model can move for 0 STM.",
+        "Unpredictable: When this model is selected to move roll a D6. On a 1 this model cannot move. On a 6 this model can move its normal distance for 0 STM.",
         "Hand Glaives: When this model attacks for melee it can make up to 2 separate melee attacks instead of just 1 in a single activation."
       ],
       "rulesText": [],
@@ -1353,12 +1656,553 @@
       "source": {
         "type": "pdf_page",
         "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-        "page": 12
+        "page": 14
       },
       "verification": {
         "status": "verified",
         "statusLabel": "Verified",
-        "updatedAt": "2026-04-01T00:00:00+00:00",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "shawka",
+      "name": "Shawka",
+      "points": 34,
+      "maxPerSquad": 1,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "8\"",
+          "sourceText": "M 8\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 7,
+          "sourceText": "W 7"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "3+",
+          "sourceText": "SV 3+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 6,
+          "sourceText": "T 6"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 2,
+          "sourceText": "STM 2"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Shawka",
+          "kind": "ranged",
+          "range": "15\"",
+          "atk": "D6",
+          "hit": "5+",
+          "str": 4,
+          "aoe": "1\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Shawka | 15\" | D6 | 5+ | 4 | 1\" | 1"
+        }
+      ],
+      "tags": [
+        "Vehicle"
+      ],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "shawka.png",
+      "sourceImageUrl": "./assets/source-cards/shawka.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 15
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "hunter",
+      "name": "Hunter",
+      "points": 14,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "6\"",
+          "sourceText": "M 6\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 3,
+          "sourceText": "W 3"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "5+",
+          "sourceText": "SV 5+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 3,
+          "sourceText": "T 3"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 3,
+          "sourceText": "STM 3"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "6+",
+          "sourceText": "6+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Rifle",
+          "kind": "ranged",
+          "range": "16\"",
+          "atk": 2,
+          "hit": "2+",
+          "str": 6,
+          "aoe": "0\"",
+          "dmg": 2,
+          "notes": [],
+          "sourceText": "Rifle | 16\" | 2 | 2+ | 6 | 0\" | 2"
+        },
+        {
+          "name": "Knife",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 3,
+          "hit": "3+",
+          "str": 5,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Knife | 1\" | 3 | 3+ | 5 | 0\" | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "hunter.png",
+      "sourceImageUrl": "./assets/source-cards/hunter.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 16
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "scout",
+      "name": "Scout",
+      "points": 7,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "8\"",
+          "sourceText": "M 8\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 2,
+          "sourceText": "W 2"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "5+",
+          "sourceText": "SV 5+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 2,
+          "sourceText": "T 2"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 1,
+          "sourceText": "SD 1"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 4,
+          "sourceText": "STM 4"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "6+",
+          "sourceText": "6+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Rifle",
+          "kind": "ranged",
+          "range": "10\"",
+          "atk": 1,
+          "hit": "4+",
+          "str": 2,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Rifle | 10\" | 1 | 4+ | 2 | 0\" | 1"
+        },
+        {
+          "name": "Knife",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 1,
+          "hit": "5+",
+          "str": 1,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Knife | 1\" | 1 | 5+ | 1 | 0\" | 1"
+        }
+      ],
+      "tags": [],
+      "specialRules": [
+        "Spotted: This model may use 1 STM to spot an enemy for 1 turn. While models are spotted, friendly units that target them with ranged attacks have +2 to the STR of their attack."
+      ],
+      "rulesText": [],
+      "sourceImage": "scout.png",
+      "sourceImageUrl": "./assets/source-cards/scout.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 17
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "keeper-of-secrets",
+      "name": "Keeper of secrets",
+      "points": 20,
+      "maxPerSquad": null,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "6\"",
+          "sourceText": "M 6\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 3,
+          "sourceText": "W 3"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "5+",
+          "sourceText": "SV 5+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 3,
+          "sourceText": "T 3"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 2,
+          "sourceText": "SD 2"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 3,
+          "sourceText": "STM 3"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "6+",
+          "sourceText": "6+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Rifle",
+          "kind": "ranged",
+          "range": "20\"",
+          "atk": 3,
+          "hit": "2+",
+          "str": 7,
+          "aoe": "1\"",
+          "dmg": 3,
+          "notes": [],
+          "sourceText": "Rifle | 20\" | 3 | 2+ | 7 | 1\" | 3"
+        },
+        {
+          "name": "Knife",
+          "kind": "melee",
+          "range": "1\"",
+          "atk": 4,
+          "hit": "3+",
+          "str": 5,
+          "aoe": "0\"",
+          "dmg": 1,
+          "notes": [],
+          "sourceText": "Knife | 1\" | 4 | 3+ | 5 | 0\" | 1"
+        }
+      ],
+      "tags": [
+        "Leader"
+      ],
+      "specialRules": [],
+      "rulesText": [],
+      "sourceImage": "keeper-of-secrets.png",
+      "sourceImageUrl": "./assets/source-cards/keeper-of-secrets.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 18
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
+        "sourceQuality": "good",
+        "unresolvedFields": [],
+        "notes": [],
+        "fieldNotes": {},
+        "reviewChecklist": {
+          "stats": true,
+          "defense": true,
+          "attacks": true,
+          "tags": true,
+          "rulesText": true
+        },
+        "hasUnresolvedFields": false,
+        "progress": {
+          "completed": 5,
+          "total": 5,
+          "percent": 100
+        }
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "unitId": "light-buggy",
+      "name": "Light buggy",
+      "points": 30,
+      "maxPerSquad": 2,
+      "stats": [
+        {
+          "key": "m",
+          "label": "M",
+          "value": "10\"",
+          "sourceText": "M 10\""
+        },
+        {
+          "key": "w",
+          "label": "W",
+          "value": 7,
+          "sourceText": "W 7"
+        },
+        {
+          "key": "sv",
+          "label": "SV",
+          "value": "4+",
+          "sourceText": "SV 4+"
+        },
+        {
+          "key": "t",
+          "label": "T",
+          "value": 6,
+          "sourceText": "T 6"
+        },
+        {
+          "key": "sd",
+          "label": "SD",
+          "value": 3,
+          "sourceText": "SD 3"
+        },
+        {
+          "key": "stm",
+          "label": "STM",
+          "value": 3,
+          "sourceText": "STM 3"
+        }
+      ],
+      "defense": [
+        {
+          "key": "ward",
+          "label": "Ward",
+          "value": "5+",
+          "sourceText": "5+"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Rifle",
+          "kind": "ranged",
+          "range": "17\"",
+          "atk": "D6",
+          "hit": "3+",
+          "str": 5,
+          "aoe": "1\"",
+          "dmg": 2,
+          "notes": [],
+          "sourceText": "Rifle | 17\" | D6 | 3+ | 5 | 1\" | 2"
+        }
+      ],
+      "tags": [
+        "Vehicle"
+      ],
+      "specialRules": [
+        "Ammo spray: Once per battle you can reroll this model's ammunition check."
+      ],
+      "rulesText": [],
+      "sourceImage": "light-buggy.png",
+      "sourceImageUrl": "./assets/source-cards/light-buggy.png",
+      "source": {
+        "type": "pdf_page",
+        "file": "assets/pdf/datasheets-for-heavenfall.pdf",
+        "page": 19
+      },
+      "verification": {
+        "status": "verified",
+        "statusLabel": "Verified",
+        "updatedAt": "2026-04-02T00:00:00+00:00",
         "sourceQuality": "good",
         "unresolvedFields": [],
         "notes": [],
@@ -1380,10 +2224,11 @@
     }
   ],
   "assetIndex": {
-    "dreg": "./assets/source-cards/dreg.png",
+    "lwbt-quad-gun": "./assets/source-cards/lwbt-quad-gun.png",
     "lwbt-transport": "./assets/source-cards/lwbt-transport.png",
     "lwbt-heavy-weapon": "./assets/source-cards/lwbt-heavy-weapon.png",
-    "lwbt-quad-gun": "./assets/source-cards/lwbt-quad-gun.png",
+    "ammo-cache": "./assets/source-cards/ammo-cache.png",
+    "dreg": "./assets/source-cards/dreg.png",
     "breaker": "./assets/source-cards/breaker.png",
     "mercenary": "./assets/source-cards/mercenary.png",
     "dreg-captain": "./assets/source-cards/dreg-captain.png",
@@ -1391,21 +2236,26 @@
     "glaive": "./assets/source-cards/glaive.png",
     "champion": "./assets/source-cards/champion.png",
     "pistolier": "./assets/source-cards/pistolier.png",
-    "rampager": "./assets/source-cards/rampager.png"
+    "rampager": "./assets/source-cards/rampager.png",
+    "shawka": "./assets/source-cards/shawka.png",
+    "hunter": "./assets/source-cards/hunter.png",
+    "scout": "./assets/source-cards/scout.png",
+    "keeper-of-secrets": "./assets/source-cards/keeper-of-secrets.png",
+    "light-buggy": "./assets/source-cards/light-buggy.png"
   },
   "verificationSummary": {
     "statusCounts": {
       "in_review": 0,
       "unverified": 0,
-      "verified": 12
+      "verified": 18
     },
     "sourceQualityCounts": {
       "fair": 0,
-      "good": 12,
+      "good": 18,
       "poor": 0
     },
     "unresolvedFieldTotal": 0,
-    "fullyVerifiedCount": 12,
+    "fullyVerifiedCount": 18,
     "inReviewCount": 0,
     "unverifiedCount": 0
   }

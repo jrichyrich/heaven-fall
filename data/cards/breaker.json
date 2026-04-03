@@ -5,15 +5,50 @@
   "points": 8,
   "maxPerSquad": null,
   "stats": [
-    { "key": "m", "label": "M", "value": "7\"", "sourceText": "M 7\"" },
-    { "key": "w", "label": "W", "value": 4, "sourceText": "W 4" },
-    { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
-    { "key": "t", "label": "T", "value": 3, "sourceText": "T 3" },
-    { "key": "sd", "label": "SD", "value": 2, "sourceText": "SD 2" },
-    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "7\"",
+      "sourceText": "M 7\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 4,
+      "sourceText": "W 4"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "4+",
+      "sourceText": "SV 4+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 3,
+      "sourceText": "T 3"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 2,
+      "sourceText": "SD 2"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 2,
+      "sourceText": "STM 2"
+    }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "6+", "sourceText": "6+" }
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "6+",
+      "sourceText": "6+"
+    }
   ],
   "attacks": [
     {
@@ -49,7 +84,9 @@
       "str": 8,
       "aoe": "2\"",
       "dmg": "D3+1",
-      "notes": ["Limit 1"],
+      "notes": [
+        "Limit 1"
+      ],
       "sourceText": "Grenade | 7\" | 1 | 4+ | 8 | 2\" | D3+1"
     }
   ],
@@ -59,11 +96,11 @@
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 5
+    "page": 7
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],

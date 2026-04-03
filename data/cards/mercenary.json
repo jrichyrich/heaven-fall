@@ -2,18 +2,53 @@
   "schemaVersion": 1,
   "unitId": "mercenary",
   "name": "Mercenary",
-  "points": 12,
+  "points": 19,
   "maxPerSquad": 2,
   "stats": [
-    { "key": "m", "label": "M", "value": "6\"", "sourceText": "M 6\"" },
-    { "key": "w", "label": "W", "value": 5, "sourceText": "W 5" },
-    { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
-    { "key": "t", "label": "T", "value": 3, "sourceText": "T 3" },
-    { "key": "sd", "label": "SD", "value": 2, "sourceText": "SD 2" },
-    { "key": "stm", "label": "STM", "value": 3, "sourceText": "STM 3" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "6\"",
+      "sourceText": "M 6\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 5,
+      "sourceText": "W 5"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "5+",
+      "sourceText": "SV 5+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 3,
+      "sourceText": "T 3"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 2,
+      "sourceText": "SD 2"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 3,
+      "sourceText": "STM 3"
+    }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "6+", "sourceText": "6+" }
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "6+",
+      "sourceText": "6+"
+    }
   ],
   "attacks": [
     {
@@ -49,23 +84,25 @@
       "str": 8,
       "aoe": "2\"",
       "dmg": "D3+1",
-      "notes": ["Limit 2"],
+      "notes": [
+        "Limit 2"
+      ],
       "sourceText": "Grenade | 7\" | 1 | 4+ | 8 | 2\" | D3+1"
     }
   ],
   "tags": [],
   "specialRules": [
-    "Mercenary Cloak: Once per game when this model would be damaged, change the DMG characteristic of the attacking attack to half its original value (rounding down)."
+    "Mercenary Cloak: Once per game when this model would be damaged, change the DMG characteristic of the attacking attack to half its original value, rounding down."
   ],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 6
+    "page": 8
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],

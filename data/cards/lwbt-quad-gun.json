@@ -5,15 +5,50 @@
   "points": 40,
   "maxPerSquad": null,
   "stats": [
-    { "key": "m", "label": "M", "value": "8\"", "sourceText": "M 8\"" },
-    { "key": "w", "label": "W", "value": 8, "sourceText": "W 8" },
-    { "key": "sv", "label": "SV", "value": "3+", "sourceText": "SV 3+" },
-    { "key": "t", "label": "T", "value": 5, "sourceText": "T 5" },
-    { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
-    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "8\"",
+      "sourceText": "M 8\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 8,
+      "sourceText": "W 8"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "3+",
+      "sourceText": "SV 3+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 5,
+      "sourceText": "T 5"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 3,
+      "sourceText": "SD 3"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 2,
+      "sourceText": "STM 2"
+    }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "5+", "sourceText": "5+" }
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "5+",
+      "sourceText": "5+"
+    }
   ],
   "attacks": [
     {
@@ -29,17 +64,19 @@
       "sourceText": "Quad gun | 16\" | D3+2 | 4+ | 5 | 1\" | 2"
     }
   ],
-  "tags": [],
+  "tags": [
+    "Vehicle"
+  ],
   "specialRules": [],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 4
+    "page": 1
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],

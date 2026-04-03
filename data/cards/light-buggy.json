@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "unitId": "dreg",
-  "name": "Dreg",
-  "points": 4,
-  "maxPerSquad": null,
+  "unitId": "light-buggy",
+  "name": "Light buggy",
+  "points": 30,
+  "maxPerSquad": 2,
   "stats": [
     {
       "key": "m",
       "label": "M",
-      "value": "6\"",
-      "sourceText": "M 6\""
+      "value": "10\"",
+      "sourceText": "M 10\""
     },
     {
       "key": "w",
       "label": "W",
-      "value": 3,
-      "sourceText": "W 3"
+      "value": 7,
+      "sourceText": "W 7"
     },
     {
       "key": "sv",
@@ -26,56 +26,55 @@
     {
       "key": "t",
       "label": "T",
-      "value": 2,
-      "sourceText": "T 2"
+      "value": 6,
+      "sourceText": "T 6"
     },
     {
       "key": "sd",
       "label": "SD",
-      "value": 2,
-      "sourceText": "SD 2"
+      "value": 3,
+      "sourceText": "SD 3"
     },
     {
       "key": "stm",
       "label": "STM",
-      "value": 2,
-      "sourceText": "STM 2"
+      "value": 3,
+      "sourceText": "STM 3"
     }
   ],
-  "defense": [],
+  "defense": [
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "5+",
+      "sourceText": "5+"
+    }
+  ],
   "attacks": [
     {
-      "name": "Gun",
+      "name": "Rifle",
       "kind": "ranged",
-      "range": "12\"",
-      "atk": "D3",
-      "hit": "4+",
-      "str": 3,
-      "aoe": "0",
-      "dmg": 1,
+      "range": "17\"",
+      "atk": "D6",
+      "hit": "3+",
+      "str": 5,
+      "aoe": "1\"",
+      "dmg": 2,
       "notes": [],
-      "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
-    },
-    {
-      "name": "Knife",
-      "kind": "melee",
-      "range": "1\"",
-      "atk": 2,
-      "hit": "4+",
-      "str": 2,
-      "aoe": "0",
-      "dmg": 1,
-      "notes": [],
-      "sourceText": "Knife | 1\" | 2 | 4+ | 2 | 0 | 1"
+      "sourceText": "Rifle | 17\" | D6 | 3+ | 5 | 1\" | 2"
     }
   ],
-  "tags": [],
-  "specialRules": [],
+  "tags": [
+    "Vehicle"
+  ],
+  "specialRules": [
+    "Ammo spray: Once per battle you can reroll this model's ammunition check."
+  ],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 6
+    "page": 19
   },
   "verification": {
     "status": "verified",

@@ -1,69 +1,60 @@
 {
   "schemaVersion": 1,
-  "unitId": "glaive",
-  "name": "Glaive",
-  "points": 10,
-  "maxPerSquad": 5,
+  "unitId": "ammo-cache",
+  "name": "Ammo cache",
+  "points": 1,
+  "maxPerSquad": null,
   "stats": [
     {
       "key": "m",
       "label": "M",
-      "value": "7\"",
-      "sourceText": "M 7\""
+      "value": "-",
+      "sourceText": "M -"
     },
     {
       "key": "w",
       "label": "W",
-      "value": 4,
-      "sourceText": "W 4"
+      "value": "-",
+      "sourceText": "W -"
     },
     {
       "key": "sv",
       "label": "SV",
-      "value": "4+",
-      "sourceText": "SV 4+"
+      "value": "-",
+      "sourceText": "SV -"
     },
     {
       "key": "t",
       "label": "T",
-      "value": 4,
-      "sourceText": "T 4"
+      "value": "-",
+      "sourceText": "T -"
     },
     {
       "key": "sd",
       "label": "SD",
-      "value": 3,
-      "sourceText": "SD 3"
+      "value": "-",
+      "sourceText": "SD -"
     },
     {
       "key": "stm",
       "label": "STM",
-      "value": 2,
-      "sourceText": "STM 2"
+      "value": "-",
+      "sourceText": "STM -"
     }
   ],
   "defense": [],
-  "attacks": [
-    {
-      "name": "Glaive",
-      "kind": "melee",
-      "range": "1\"",
-      "atk": 4,
-      "hit": "4+",
-      "str": 4,
-      "aoe": "0\"",
-      "dmg": 1,
-      "notes": [],
-      "sourceText": "Glaive | 1\" | 4 | 4+ | 4 | 0\" | 1"
-    }
+  "attacks": [],
+  "tags": [
+    "Deployable"
   ],
-  "tags": [],
-  "specialRules": [],
+  "specialRules": [
+    "Ammo Cache: Once per game this model can select an infantry model within 1\" of this model. When it does this model is destroyed and you can clear any ammunition tokens on the model within 1\"."
+  ],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 11
+    "page": 4
   },
   "verification": {
     "status": "verified",

@@ -3,6 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -69,6 +70,22 @@ class BuildCatalogTests(unittest.TestCase):
                 ],
             },
         )
+        write_json(
+            data_root / "factions.json",
+            {
+                "schemaVersion": 1,
+                "title": "Faction Rules",
+                "groups": [
+                    {
+                        "id": "houno",
+                        "title": "Houno",
+                        "sections": [
+                            {"id": "voice-of-command", "title": "Voice of command", "body": ["Faction passive."]},
+                        ],
+                    }
+                ],
+            },
+        )
 
         return data_root, docs_root, source_root
 
@@ -110,14 +127,18 @@ class BuildCatalogTests(unittest.TestCase):
             },
         )
 
-        manifest, catalog, report = MODULE.build_catalog(data_root, docs_root, source_root)
+        with mock.patch.object(MODULE, "render_pdf_page") as render_pdf_page:
+            render_pdf_page.side_effect = lambda _src, _page, target: Path(target).write_bytes(b"png")
+            manifest, catalog, report = MODULE.build_catalog(data_root, docs_root, source_root)
 
         self.assertEqual(manifest["unitCount"], 1)
+        self.assertEqual(manifest["factionCount"], 1)
         self.assertEqual(catalog["units"][0]["unitId"], "lwbt-heavy-weapon")
         self.assertEqual(catalog["units"][0]["points"], 50)
         self.assertTrue((docs_root / "assets" / "source-cards" / "lwbt-heavy-weapon.png").exists())
         self.assertEqual(catalog["units"][0]["source"]["page"], 3)
         self.assertEqual(report["summary"]["statusCounts"]["verified"], 1)
+        self.assertEqual(catalog["factions"][0]["title"], "Houno")
 
     def test_build_catalog_rejects_duplicate_unit_id(self) -> None:
         data_root, docs_root, source_root = self.make_fixture()
@@ -189,6 +210,7 @@ class BuildCatalogTests(unittest.TestCase):
         manifest, catalog, report = MODULE.build_catalog(data_root, docs_root, source_root)
 
         self.assertEqual(manifest["rulesSectionCount"], 2)
+        self.assertEqual(manifest["factionSectionCount"], 1)
         verification = catalog["units"][0]["verification"]
         self.assertEqual(verification["unresolvedFields"], ["attacks[0].range"])
         self.assertTrue(verification["hasUnresolvedFields"])

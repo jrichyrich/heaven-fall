@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "unitId": "skrap",
-  "name": "Skrap",
-  "points": 5,
+  "unitId": "scout",
+  "name": "Scout",
+  "points": 7,
   "maxPerSquad": null,
   "stats": [
     {
       "key": "m",
       "label": "M",
-      "value": "6\"",
-      "sourceText": "M 6\""
+      "value": "8\"",
+      "sourceText": "M 8\""
     },
     {
       "key": "w",
@@ -32,52 +32,59 @@
     {
       "key": "sd",
       "label": "SD",
-      "value": 2,
-      "sourceText": "SD 2"
+      "value": 1,
+      "sourceText": "SD 1"
     },
     {
       "key": "stm",
       "label": "STM",
-      "value": 2,
-      "sourceText": "STM 2"
+      "value": 4,
+      "sourceText": "STM 4"
     }
   ],
-  "defense": [],
+  "defense": [
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "6+",
+      "sourceText": "6+"
+    }
+  ],
   "attacks": [
     {
-      "name": "Melee weapon",
-      "kind": "melee",
-      "range": "1\"",
-      "atk": 2,
+      "name": "Rifle",
+      "kind": "ranged",
+      "range": "10\"",
+      "atk": 1,
       "hit": "4+",
       "str": 2,
       "aoe": "0\"",
       "dmg": 1,
       "notes": [],
-      "sourceText": "Melee weapon | 1\" | 2 | 4+ | 2 | 0\" | 1"
+      "sourceText": "Rifle | 10\" | 1 | 4+ | 2 | 0\" | 1"
     },
     {
-      "name": "Scrap piston",
-      "kind": "ranged",
-      "range": "7\"",
-      "atk": "D3",
-      "hit": "4+",
-      "str": 3,
+      "name": "Knife",
+      "kind": "melee",
+      "range": "1\"",
+      "atk": 1,
+      "hit": "5+",
+      "str": 1,
       "aoe": "0\"",
       "dmg": 1,
       "notes": [],
-      "sourceText": "Scrap piston | 7\" | D3 | 4+ | 3 | 0\" | 1"
+      "sourceText": "Knife | 1\" | 1 | 5+ | 1 | 0\" | 1"
     }
   ],
   "tags": [],
   "specialRules": [
-    "Skrap ammo: When a Pistolier is within 1\" of this model, this model may give its ammo to the Pistolier. The Pistolier loses one of its ammunition tokens and this model gains an ammunition token."
+    "Spotted: This model may use 1 STM to spot an enemy for 1 turn. While models are spotted, friendly units that target them with ranged attacks have +2 to the STR of their attack."
   ],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 10
+    "page": 17
   },
   "verification": {
     "status": "verified",

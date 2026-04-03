@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "unitId": "skrap",
-  "name": "Skrap",
-  "points": 5,
+  "unitId": "hunter",
+  "name": "Hunter",
+  "points": 14,
   "maxPerSquad": null,
   "stats": [
     {
@@ -14,8 +14,8 @@
     {
       "key": "w",
       "label": "W",
-      "value": 2,
-      "sourceText": "W 2"
+      "value": 3,
+      "sourceText": "W 3"
     },
     {
       "key": "sv",
@@ -26,8 +26,8 @@
     {
       "key": "t",
       "label": "T",
-      "value": 2,
-      "sourceText": "T 2"
+      "value": 3,
+      "sourceText": "T 3"
     },
     {
       "key": "sd",
@@ -38,46 +38,51 @@
     {
       "key": "stm",
       "label": "STM",
-      "value": 2,
-      "sourceText": "STM 2"
+      "value": 3,
+      "sourceText": "STM 3"
     }
   ],
-  "defense": [],
+  "defense": [
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "6+",
+      "sourceText": "6+"
+    }
+  ],
   "attacks": [
     {
-      "name": "Melee weapon",
-      "kind": "melee",
-      "range": "1\"",
+      "name": "Rifle",
+      "kind": "ranged",
+      "range": "16\"",
       "atk": 2,
-      "hit": "4+",
-      "str": 2,
+      "hit": "2+",
+      "str": 6,
       "aoe": "0\"",
-      "dmg": 1,
+      "dmg": 2,
       "notes": [],
-      "sourceText": "Melee weapon | 1\" | 2 | 4+ | 2 | 0\" | 1"
+      "sourceText": "Rifle | 16\" | 2 | 2+ | 6 | 0\" | 2"
     },
     {
-      "name": "Scrap piston",
-      "kind": "ranged",
-      "range": "7\"",
-      "atk": "D3",
-      "hit": "4+",
-      "str": 3,
+      "name": "Knife",
+      "kind": "melee",
+      "range": "1\"",
+      "atk": 3,
+      "hit": "3+",
+      "str": 5,
       "aoe": "0\"",
       "dmg": 1,
       "notes": [],
-      "sourceText": "Scrap piston | 7\" | D3 | 4+ | 3 | 0\" | 1"
+      "sourceText": "Knife | 1\" | 3 | 3+ | 5 | 0\" | 1"
     }
   ],
   "tags": [],
-  "specialRules": [
-    "Skrap ammo: When a Pistolier is within 1\" of this model, this model may give its ammo to the Pistolier. The Pistolier loses one of its ammunition tokens and this model gains an ammunition token."
-  ],
+  "specialRules": [],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 10
+    "page": 16
   },
   "verification": {
     "status": "verified",

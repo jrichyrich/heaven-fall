@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "title": "Faction Rules",
+  "groups": [
+    {
+      "id": "houno",
+      "title": "Houno",
+      "sections": [
+        {
+          "id": "voice-of-command",
+          "title": "Voice of command",
+          "body": [
+            "While there is a leader on the battlefield, each turn you choose between gaining or losing 1 cell."
+          ]
+        },
+        {
+          "id": "we-shall-overcome",
+          "title": "We shall overcome",
+          "body": [
+            "For 1 cell select a model that is making a save. You may add 1 to that model's SD characteristic for the purpose of saving against that attack."
+          ]
+        },
+        {
+          "id": "our-kingdom",
+          "title": "Our kingdom",
+          "body": [
+            "For 2 cells at the start of your turn you can use this. If you do, whenever a friendly Dreg unit dies roll 1 D6. On a 5+ they have 1 wound left."
+          ]
+        },
+        {
+          "id": "born-ready",
+          "title": "Born ready",
+          "body": [
+            "For 1 cell improve the Hit characteristic of a model by 1 for 1 activation."
+          ]
+        },
+        {
+          "id": "heavens-allies",
+          "title": "Heavens allies",
+          "body": [
+            "Alliance: You may add up to 3 LWBT models of any variant to your army. You may also add up to 5 Breaker models. You still have to pay their points."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sakaai",
+      "title": "Sakaai",
+      "sections": [
+        {
+          "id": "jackals",
+          "title": "Jackals",
+          "body": [
+            "Whenever a model is performing the charge action you may reroll the charge roll but subtract 1 from the roll."
+          ]
+        },
+        {
+          "id": "twisted-joy",
+          "title": "Twisted Joy",
+          "body": [
+            "For 2 cells at the start of your turn you can activate this. Whenever a friendly unit destroys an enemy unit that model regains 1 wound."
+          ]
+        },
+        {
+          "id": "bionik-surge",
+          "title": "Bionik Surge",
+          "body": [
+            "For 1 cell select 1 friendly unit, excluding Skraps. That model gains +2 M for 1 movement."
+          ]
+        },
+        {
+          "id": "diskarded",
+          "title": "Diskarded",
+          "body": [
+            "For 1 cell when a friendly unit is about to be attacked by a ranged attack you can select 1 Skrap model within 4\". The Skrap is the new target of the weapon."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shango",
+      "title": "Shango",
+      "sections": [
+        {
+          "id": "mechanical-engineers",
+          "title": "Mechanical engineers",
+          "body": [
+            "Vehicle models regain 1 wound each time they are activated."
+          ]
+        },
+        {
+          "id": "indestructible",
+          "title": "Indestructible",
+          "body": [
+            "When a vehicle model is destroyed you may use 2 cells to bring it back. It must be redeployed and comes back with D6 wounds remaining."
+          ]
+        },
+        {
+          "id": "humans-are-cheep",
+          "title": "Humans are cheep",
+          "body": [
+            "Whenever an infantry model is destroyed you may use a cell to bring them back. When coming back they must be redeployed."
+          ]
+        },
+        {
+          "id": "will-of-steal",
+          "title": "Will of steal",
+          "body": [
+            "While infantry models are shooting, if they are within 6\" of a vehicle you may spend 1 cell. That infantry now has D3 extra ATK for one activation."
+          ]
+        },
+        {
+          "id": "heavens-allies",
+          "title": "Heavens allies",
+          "body": [
+            "Alliance: You may add up to 1 Mercenary in your army. You may also add up to 10 Dreg models. You still have to pay their points."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syksy",
+      "title": "Syksy",
+      "sections": [
+        {
+          "id": "born-shadow",
+          "title": "Born shadow",
+          "body": [
+            "When a model is within cover it cannot be targeted by a ranged attack."
+          ]
+        },
+        {
+          "id": "never-even-there",
+          "title": "Never even there",
+          "body": [
+            "For 1 cell you may select a model that was just destroyed by a ranged attack and was by cover. If the attack was made from 10\" away or more do not remove the model. Instead move it 3\" but stay within range of the cover."
+          ]
+        },
+        {
+          "id": "precision-rifles",
+          "title": "Precision Rifles",
+          "body": [
+            "For 1 cell you may target a leader unit with a ranged attack for 0 STM."
+          ]
+        },
+        {
+          "id": "fade",
+          "title": "Fade",
+          "body": [
+            "For 2 cells you may select 1 model with at least 1 STM left. You may move that unit anywhere that is within 1\" of terrain and 9\" away from opponents."
+          ]
+        }
+      ]
+    }
+  ]
+}

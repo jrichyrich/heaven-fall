@@ -124,3 +124,15 @@ test("hash helpers preserve unit, preview, and review state for deep links", () 
   assert.equal(parsed.reviewSourceQualityFilter, "good");
   assert.equal(parsed.sourceZoom, 1.5);
 });
+
+test("createInitialState accepts factions as a top-level view", () => {
+  const catalog = {
+    units: [{ unitId: "champion" }],
+    factions: [{ id: "houno", title: "Houno", sections: [] }]
+  };
+
+  const state = app.createInitialState(catalog, "#view=factions&unit=champion");
+
+  assert.equal(state.viewMode, "factions");
+  assert.equal(state.selectedUnitId, "champion");
+});

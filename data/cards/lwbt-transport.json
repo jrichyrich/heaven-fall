@@ -5,15 +5,50 @@
   "points": 35,
   "maxPerSquad": null,
   "stats": [
-    { "key": "m", "label": "M", "value": "8\"", "sourceText": "M 8\"" },
-    { "key": "w", "label": "W", "value": 8, "sourceText": "W 8" },
-    { "key": "sv", "label": "SV", "value": "3+", "sourceText": "SV 3+" },
-    { "key": "t", "label": "T", "value": 5, "sourceText": "T 5" },
-    { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
-    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "8\"",
+      "sourceText": "M 8\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 8,
+      "sourceText": "W 8"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "3+",
+      "sourceText": "SV 3+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 5,
+      "sourceText": "T 5"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 3,
+      "sourceText": "SD 3"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 2,
+      "sourceText": "STM 2"
+    }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "5+", "sourceText": "5+" }
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "5+",
+      "sourceText": "5+"
+    }
   ],
   "attacks": [
     {
@@ -29,7 +64,9 @@
       "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
     }
   ],
-  "tags": [],
+  "tags": [
+    "Vehicle"
+  ],
   "specialRules": [
     "Transport: This model can transport up to 4 space-dreg (1 space) and Breaker (2 space)."
   ],
@@ -41,7 +78,7 @@
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],

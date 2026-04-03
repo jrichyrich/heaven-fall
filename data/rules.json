@@ -6,14 +6,14 @@
       "id": "ammo",
       "title": "Ammo",
       "body": [
-        "Each turn when a weapon with 3+ inches of range makes a attack: after resolving the attack roll 1 D6 on a 3+ the weapon has passed the ammo check, on a 1 or a 2 place a ammunition marker next to them to simbolise that they have ran out of ammunition."
+        "Each turn when a weapon with 3+ inches of range makes an attack, after resolving the attack roll 1 D6. On a 2+ the weapon passes the ammo check. Otherwise place an ammunition marker next to the model to symbolize that it has run out of ammunition."
       ]
     },
     {
       "id": "cover",
       "title": "Cover",
       "body": [
-        "When a model is obscured or has a piece of terran blocking the sights of the attacker then that unit is considered in cover, while in cover the following benefits take action:",
+        "When a model is obscured or has a piece of terrain blocking the sights of the attacker then that unit is considered in cover. While in cover the following benefits apply:",
         "-1 to be hit",
         "+1 to save dice"
       ]
@@ -22,54 +22,104 @@
       "id": "cells",
       "title": "Cells",
       "body": [
-        "At the start of each players turn that player gains 1 cell (this can be altered by abilities) The player can have up to a maximum of 5 cell points, once 5 has been reached the player must remove 1 STM from each unit under there control. To a minimum of 0"
+        "At the start of each player turn that player gains 1 cell if at least one model has any STM. This can be altered by abilities.",
+        "The player can have up to a maximum of 5 cell points. Once 5 has been reached the player must remove 1 STM from each unit under their control, to a minimum of 0.",
+        "Cells can also be obtained by destroying enemy models. Each enemy model destroyed is 1 cell point gained.",
+        "If you have 0-1 cells remaining all your units have -1 to their hit rolls."
       ]
     },
     {
       "id": "strains",
       "title": "Strains",
       "body": [
-        "The following will be abilites that are universal strains for units to use, each strain will specify how much Cells are needed to use it",
-        "Reroll- 1 cell",
-        "Cover fire- 2 cells",
-        "Chill- 1 cell",
-        "Burn- 1 cell"
+        "The following are universal strains for units to use. Each strain specifies how many cells are needed to use it.",
+        "Reroll - 1 cell",
+        "Cover fire - 2 cells",
+        "Chill - 1 cell",
+        "Burn - 1 cell",
+        "Shuffle - 2 cells",
+        "Reinforcements - 5 cells"
       ]
     },
     {
       "id": "reroll",
       "title": "Reroll",
       "body": [
-        "Reroll -1 cell",
-        "At the start of your turn you may use this",
-        "Roll 1 D3, that number is the number of dice you may reroll this turn."
+        "At the start of your turn you may use this strain.",
+        "Roll 1 D3. That number is the number of dice you may reroll this turn."
       ]
     },
     {
       "id": "cover-fire",
       "title": "Cover fire",
       "body": [
-        "Cover fire -2 cells",
-        "When your opponent moves a enemy within 12 inches of a friendly model.",
-        "That friendly model may make a normal move. After that model has made a normal move you may select another model that also withing 12 inches and has line of sight of the enemy model, that model may shoot at the enemy model if they are an elegible target."
+        "When your opponent moves an enemy within 12 inches of a friendly model, that friendly model may make a normal move.",
+        "After that model has made a normal move you may select another model that is also within 12 inches and has line of sight of the enemy model. That model may shoot at the enemy model if they are an eligible target."
       ]
     },
     {
       "id": "chill",
       "title": "Chill",
       "body": [
-        "Chill -1 cell",
-        "When a friendly unit would be destroyed you may use this (excluding Vehicles)",
-        "All there remaining STM is lost and there remaining wounds is changed to 1"
+        "When a friendly unit would be destroyed you may use this strain, excluding vehicles.",
+        "All their remaining STM is lost and their remaining wounds are changed to 1."
       ]
     },
     {
       "id": "burn",
       "title": "Burn",
       "body": [
-        "Burn -1 cell",
-        "When a friendly unit would be destroyed you may use this (excluding Vehicles)",
-        "Before the model is removed it may make 2 STM actions (not of the same action) before dying."
+        "When a friendly unit would be destroyed you may use this strain, excluding vehicles.",
+        "Before the model is removed it may make 2 STM actions, not of the same action, before dying."
+      ]
+    },
+    {
+      "id": "shuffle",
+      "title": "Shuffle",
+      "body": [
+        "Move a model 1\"."
+      ]
+    },
+    {
+      "id": "reinforcements",
+      "title": "Reinforcements",
+      "body": [
+        "Select the equivalent of up to 6 wounds of dead models and put them back on the table within 2\" of each other and 2\" of your side of the board.",
+        "You cannot add leaders again."
+      ]
+    },
+    {
+      "id": "actions-costs",
+      "title": "Actions",
+      "body": [
+        "Normal move - 1 STM",
+        "Attack - 1 STM",
+        "Charge - 1 STM",
+        "Mission action - 1 STM",
+        "Close combat - 1 STM"
+      ]
+    },
+    {
+      "id": "actions-reference",
+      "title": "Actions",
+      "body": [
+        "Normal move: that model may move up to their move characteristic.",
+        "Attack: select a weapon that the model is equipped with and has 3+ range. That model may make an attack with that weapon.",
+        "Charge: select an enemy model within 6in of that model. Roll 1 D6. If the result is equal to or greater than the distance between the 2 models the charge is successful and does not require STM. If it fails they still move but lose 1 STM.",
+        "Mission action: the mission action is specified on the mission rules.",
+        "Close combat: select a weapon with less than 3in of range and make an attack with that weapon."
+      ]
+    },
+    {
+      "id": "weapons",
+      "title": "Weapons",
+      "body": [
+        "RNG: how close the target must be. 3+ inches is a ranged weapon. 1 or 2 inches is a melee weapon.",
+        "ATK: how many dice you roll for the attack.",
+        "HIT: the result needed on the dice for a hit.",
+        "STR: for each 2 STR more than the toughness the opponent rolls 1 less SD. For each 2 STR less than the toughness the opponent rolls 1 more SD.",
+        "AOE: after deciding the fate of the original target roll for all models, friendly and enemy, from the original target point of view. Melee weapons are different: roll for everyone within AOE range of the initial target from the attacker perspective.",
+        "DMG: how much damage each successful wound does."
       ]
     }
   ]

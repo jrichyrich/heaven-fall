@@ -5,15 +5,50 @@
   "points": 16,
   "maxPerSquad": 2,
   "stats": [
-    { "key": "m", "label": "M", "value": "9\"", "sourceText": "M 9\"" },
-    { "key": "w", "label": "W", "value": 3, "sourceText": "W 3" },
-    { "key": "sv", "label": "SV", "value": "5+", "sourceText": "SV 5+" },
-    { "key": "t", "label": "T", "value": 3, "sourceText": "T 3" },
-    { "key": "sd", "label": "SD", "value": 2, "sourceText": "SD 2" },
-    { "key": "stm", "label": "STM", "value": 3, "sourceText": "STM 3" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "9\"",
+      "sourceText": "M 9\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 3,
+      "sourceText": "W 3"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "5+",
+      "sourceText": "SV 5+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 3,
+      "sourceText": "T 3"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 2,
+      "sourceText": "SD 2"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 3,
+      "sourceText": "STM 3"
+    }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "5+", "sourceText": "5+" }
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "5+",
+      "sourceText": "5+"
+    }
   ],
   "attacks": [
     {
@@ -43,18 +78,18 @@
   ],
   "tags": [],
   "specialRules": [
-    "Unpredictable: When this model is selected to move, roll a D6. On a 1 this model cannot move. On a 6 this model can move for 0 STM.",
+    "Unpredictable: When this model is selected to move roll a D6. On a 1 this model cannot move. On a 6 this model can move its normal distance for 0 STM.",
     "Hand Glaives: When this model attacks for melee it can make up to 2 separate melee attacks instead of just 1 in a single activation."
   ],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 12
+    "page": 14
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],

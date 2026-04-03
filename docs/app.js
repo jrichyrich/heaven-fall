@@ -26,6 +26,16 @@
 
   function parseHashState(hashValue) {
     const rawHash = String(hashValue || "").replace(/^#/, "");
+    if (!rawHash || !rawHash.includes("=")) {
+      return {
+        viewMode: null,
+        previewMode: null,
+        selectedUnitId: null,
+        reviewStatusFilter: null,
+        reviewSourceQualityFilter: null,
+        sourceZoom: null
+      };
+    }
     const params = new URLSearchParams(rawHash);
     return {
       viewMode: params.get("view"),
@@ -68,7 +78,7 @@
       : (units.length ? units[0].unitId : null);
 
     return {
-      viewMode: parsed.viewMode === "rules" || parsed.viewMode === "review" ? parsed.viewMode : "units",
+      viewMode: parsed.viewMode === "rules" || parsed.viewMode === "review" || parsed.viewMode === "factions" ? parsed.viewMode : "units",
       previewMode: parsed.previewMode === "source" ? "source" : "digital",
       selectedUnitId,
       reviewStatusFilter: parsed.reviewStatusFilter || "all",
@@ -112,7 +122,7 @@
     }
 
     if (action.type === "set-view-mode") {
-      current.viewMode = action.value === "rules" || action.value === "review" ? action.value : "units";
+      current.viewMode = action.value === "rules" || action.value === "review" || action.value === "factions" ? action.value : "units";
       return ensureSelectedUnitVisible(current, catalog);
     }
 
@@ -162,6 +172,10 @@
       return current;
     }
 
+    if (action.type === "scroll-to-section") {
+      return current;
+    }
+
     return current;
   }
 
@@ -177,6 +191,7 @@
       <div class="toggle-row">
         <button class="toggle-btn ${state.viewMode === "units" ? "is-active" : ""}" data-action="set-view-mode" data-value="units">Units</button>
         <button class="toggle-btn ${state.viewMode === "rules" ? "is-active" : ""}" data-action="set-view-mode" data-value="rules">Rules</button>
+        <button class="toggle-btn ${state.viewMode === "factions" ? "is-active" : ""}" data-action="set-view-mode" data-value="factions">Factions</button>
         <button class="toggle-btn ${state.viewMode === "review" ? "is-active" : ""}" data-action="set-view-mode" data-value="review">Review</button>
       </div>
     `;
@@ -223,6 +238,7 @@
 
   function renderSidebar(state, manifest, catalog) {
     const rules = Array.isArray(catalog && catalog.rules) ? catalog.rules : [];
+    const factions = Array.isArray(catalog && catalog.factions) ? catalog.factions : [];
     const visibleUnits = getVisibleUnits(state, catalog);
     const selected = getSelectedUnit(state, catalog);
     const summary = manifest && manifest.verificationSummary ? manifest.verificationSummary : {};
@@ -239,7 +255,7 @@
         <div class="brand">
           <span class="brand-kicker">Static Library</span>
           <h1>Heaven Fall</h1>
-          <p>${escapeHtml((manifest && manifest.unitCount) || visibleUnits.length)} unit cards. ${(manifest && manifest.rulesSectionCount) || 0} extracted rule sections.</p>
+          <p>${escapeHtml((manifest && manifest.unitCount) || visibleUnits.length)} unit cards. ${(manifest && manifest.rulesSectionCount) || 0} rule sections. ${(manifest && manifest.factionCount) || 0} factions.</p>
         </div>
         ${renderViewToggle(state)}
         ${state.viewMode === "rules" ? `
@@ -247,10 +263,22 @@
             <span class="section-label">Rule Groups</span>
             <div class="rule-list">
               ${rules.map((group) => `
-                <a class="unit-button rule-anchor" href="#${escapeHtml(group.id)}">
+                <button class="unit-button rule-anchor" data-action="scroll-to-section" data-value="${escapeHtml(group.id)}">
                   <span class="unit-name">${escapeHtml(group.title)}</span>
                   <span class="rule-list-label">${escapeHtml(group.sections.length)} sections</span>
-                </a>
+                </button>
+              `).join("")}
+            </div>
+          </section>
+        ` : state.viewMode === "factions" ? `
+          <section class="sidebar-panel">
+            <span class="section-label">Factions</span>
+            <div class="rule-list">
+              ${factions.map((group) => `
+                <button class="unit-button rule-anchor" data-action="scroll-to-section" data-value="${escapeHtml(group.id)}">
+                  <span class="unit-name">${escapeHtml(group.title)}</span>
+                  <span class="rule-list-label">${escapeHtml(group.sections.length)} sections</span>
+                </button>
               `).join("")}
             </div>
           </section>
@@ -476,6 +504,23 @@
     `;
   }
 
+  function renderFactionsView(catalog) {
+    return `
+      <main class="main">
+        <div class="main-card">
+          <header class="view-header">
+            <div>
+              <span class="section-label">Faction Rules</span>
+              <h2 class="view-title">Faction Compendium</h2>
+              <p class="view-copy">Faction-specific passives, cell abilities, and alliance rules extracted from the faction rules PDF.</p>
+            </div>
+          </header>
+          ${renderer.renderRulesGroups(catalog.factions)}
+        </div>
+      </main>
+    `;
+  }
+
   function renderReviewView(state, catalog) {
     const selected = getSelectedUnit(state, catalog);
     const visibleUnits = getVisibleUnits(state, catalog);
@@ -533,6 +578,9 @@
     if (state.viewMode === "rules") {
       return renderRulesView(catalog);
     }
+    if (state.viewMode === "factions") {
+      return renderFactionsView(catalog);
+    }
     if (state.viewMode === "review") {
       return renderReviewView(state, catalog);
     }
@@ -584,6 +632,12 @@
         }, catalog);
         renderApp(rootElement, state, manifest, catalog);
         syncHash(state);
+        if (target.getAttribute("data-action") === "scroll-to-section" && typeof document !== "undefined") {
+          const section = document.getElementById(target.getAttribute("data-value") || "");
+          if (section && typeof section.scrollIntoView === "function") {
+            section.scrollIntoView({ block: "start", behavior: "smooth" });
+          }
+        }
       });
       if (typeof window !== "undefined") {
         window.addEventListener("hashchange", function () {

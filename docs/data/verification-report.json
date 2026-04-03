@@ -1,30 +1,30 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-02T02:27:05+00:00",
+  "generatedAt": "2026-04-03T02:51:13+00:00",
   "summary": {
     "statusCounts": {
       "in_review": 0,
       "unverified": 0,
-      "verified": 12
+      "verified": 18
     },
     "sourceQualityCounts": {
       "fair": 0,
-      "good": 12,
+      "good": 18,
       "poor": 0
     },
     "unresolvedFieldTotal": 0,
-    "fullyVerifiedCount": 12,
+    "fullyVerifiedCount": 18,
     "inReviewCount": 0,
     "unverifiedCount": 0
   },
   "cards": [
     {
-      "unitId": "dreg",
-      "name": "Dreg",
+      "unitId": "lwbt-quad-gun",
+      "name": "LWBT Quad gun",
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -32,7 +32,7 @@
         "total": 5,
         "percent": 100
       },
-      "sourceImage": "dreg.png",
+      "sourceImage": "lwbt-quad-gun.png",
       "sourcePage": 1
     },
     {
@@ -41,7 +41,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -58,7 +58,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -70,12 +70,12 @@
       "sourcePage": 3
     },
     {
-      "unitId": "lwbt-quad-gun",
-      "name": "LWBT Quad gun",
+      "unitId": "ammo-cache",
+      "name": "Ammo cache",
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -83,8 +83,25 @@
         "total": 5,
         "percent": 100
       },
-      "sourceImage": "lwbt-quad-gun.png",
+      "sourceImage": "ammo-cache.png",
       "sourcePage": 4
+    },
+    {
+      "unitId": "dreg",
+      "name": "Dreg",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "dreg.png",
+      "sourcePage": 6
     },
     {
       "unitId": "breaker",
@@ -92,7 +109,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -101,7 +118,7 @@
         "percent": 100
       },
       "sourceImage": "breaker.png",
-      "sourcePage": 5
+      "sourcePage": 7
     },
     {
       "unitId": "mercenary",
@@ -109,7 +126,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -118,7 +135,7 @@
         "percent": 100
       },
       "sourceImage": "mercenary.png",
-      "sourcePage": 6
+      "sourcePage": 8
     },
     {
       "unitId": "dreg-captain",
@@ -126,7 +143,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -135,7 +152,7 @@
         "percent": 100
       },
       "sourceImage": "dreg-captain.png",
-      "sourcePage": 7
+      "sourcePage": 9
     },
     {
       "unitId": "skrap",
@@ -143,7 +160,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -152,7 +169,7 @@
         "percent": 100
       },
       "sourceImage": "skrap.png",
-      "sourcePage": 8
+      "sourcePage": 10
     },
     {
       "unitId": "glaive",
@@ -160,7 +177,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -169,7 +186,7 @@
         "percent": 100
       },
       "sourceImage": "glaive.png",
-      "sourcePage": 9
+      "sourcePage": 11
     },
     {
       "unitId": "champion",
@@ -177,7 +194,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -186,7 +203,7 @@
         "percent": 100
       },
       "sourceImage": "champion.png",
-      "sourcePage": 10
+      "sourcePage": 12
     },
     {
       "unitId": "pistolier",
@@ -194,7 +211,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -203,7 +220,7 @@
         "percent": 100
       },
       "sourceImage": "pistolier.png",
-      "sourcePage": 11
+      "sourcePage": 13
     },
     {
       "unitId": "rampager",
@@ -211,7 +228,7 @@
       "status": "verified",
       "statusLabel": "Verified",
       "sourceQuality": "good",
-      "updatedAt": "2026-04-01T00:00:00+00:00",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
       "unresolvedFieldCount": 0,
       "unresolvedFields": [],
       "progress": {
@@ -220,7 +237,92 @@
         "percent": 100
       },
       "sourceImage": "rampager.png",
-      "sourcePage": 12
+      "sourcePage": 14
+    },
+    {
+      "unitId": "shawka",
+      "name": "Shawka",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "shawka.png",
+      "sourcePage": 15
+    },
+    {
+      "unitId": "hunter",
+      "name": "Hunter",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "hunter.png",
+      "sourcePage": 16
+    },
+    {
+      "unitId": "scout",
+      "name": "Scout",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "scout.png",
+      "sourcePage": 17
+    },
+    {
+      "unitId": "keeper-of-secrets",
+      "name": "Keeper of secrets",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "keeper-of-secrets.png",
+      "sourcePage": 18
+    },
+    {
+      "unitId": "light-buggy",
+      "name": "Light buggy",
+      "status": "verified",
+      "statusLabel": "Verified",
+      "sourceQuality": "good",
+      "updatedAt": "2026-04-02T00:00:00+00:00",
+      "unresolvedFieldCount": 0,
+      "unresolvedFields": [],
+      "progress": {
+        "completed": 5,
+        "total": 5,
+        "percent": 100
+      },
+      "sourceImage": "light-buggy.png",
+      "sourcePage": 19
     }
   ]
 }

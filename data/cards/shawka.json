@@ -1,39 +1,39 @@
 {
   "schemaVersion": 1,
-  "unitId": "dreg",
-  "name": "Dreg",
-  "points": 4,
-  "maxPerSquad": null,
+  "unitId": "shawka",
+  "name": "Shawka",
+  "points": 34,
+  "maxPerSquad": 1,
   "stats": [
     {
       "key": "m",
       "label": "M",
-      "value": "6\"",
-      "sourceText": "M 6\""
+      "value": "8\"",
+      "sourceText": "M 8\""
     },
     {
       "key": "w",
       "label": "W",
-      "value": 3,
-      "sourceText": "W 3"
+      "value": 7,
+      "sourceText": "W 7"
     },
     {
       "key": "sv",
       "label": "SV",
-      "value": "4+",
-      "sourceText": "SV 4+"
+      "value": "3+",
+      "sourceText": "SV 3+"
     },
     {
       "key": "t",
       "label": "T",
-      "value": 2,
-      "sourceText": "T 2"
+      "value": 6,
+      "sourceText": "T 6"
     },
     {
       "key": "sd",
       "label": "SD",
-      "value": 2,
-      "sourceText": "SD 2"
+      "value": 3,
+      "sourceText": "SD 3"
     },
     {
       "key": "stm",
@@ -42,40 +42,37 @@
       "sourceText": "STM 2"
     }
   ],
-  "defense": [],
-  "attacks": [
+  "defense": [
     {
-      "name": "Gun",
-      "kind": "ranged",
-      "range": "12\"",
-      "atk": "D3",
-      "hit": "4+",
-      "str": 3,
-      "aoe": "0",
-      "dmg": 1,
-      "notes": [],
-      "sourceText": "Gun | 12\" | D3 | 4+ | 3 | 0 | 1"
-    },
-    {
-      "name": "Knife",
-      "kind": "melee",
-      "range": "1\"",
-      "atk": 2,
-      "hit": "4+",
-      "str": 2,
-      "aoe": "0",
-      "dmg": 1,
-      "notes": [],
-      "sourceText": "Knife | 1\" | 2 | 4+ | 2 | 0 | 1"
+      "key": "ward",
+      "label": "Ward",
+      "value": "5+",
+      "sourceText": "5+"
     }
   ],
-  "tags": [],
+  "attacks": [
+    {
+      "name": "Shawka",
+      "kind": "ranged",
+      "range": "15\"",
+      "atk": "D6",
+      "hit": "5+",
+      "str": 4,
+      "aoe": "1\"",
+      "dmg": 1,
+      "notes": [],
+      "sourceText": "Shawka | 15\" | D6 | 5+ | 4 | 1\" | 1"
+    }
+  ],
+  "tags": [
+    "Vehicle"
+  ],
   "specialRules": [],
   "rulesText": [],
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 6
+    "page": 15
   },
   "verification": {
     "status": "verified",

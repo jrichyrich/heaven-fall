@@ -5,15 +5,50 @@
   "points": 14,
   "maxPerSquad": null,
   "stats": [
-    { "key": "m", "label": "M", "value": "6\"", "sourceText": "M 6\"" },
-    { "key": "w", "label": "W", "value": 5, "sourceText": "W 5" },
-    { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
-    { "key": "t", "label": "T", "value": 3, "sourceText": "T 3" },
-    { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
-    { "key": "stm", "label": "STM", "value": 3, "sourceText": "STM 3" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "6\"",
+      "sourceText": "M 6\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 5,
+      "sourceText": "W 5"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "4+",
+      "sourceText": "SV 4+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 3,
+      "sourceText": "T 3"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 3,
+      "sourceText": "SD 3"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 3,
+      "sourceText": "STM 3"
+    }
   ],
   "defense": [
-    { "key": "ward", "label": "Ward", "value": "5+", "sourceText": "5+" }
+    {
+      "key": "ward",
+      "label": "Ward",
+      "value": "5+",
+      "sourceText": "5+"
+    }
   ],
   "attacks": [
     {
@@ -29,7 +64,9 @@
       "sourceText": "Blunt weapon | 1\" | 4 | 3+ | 4 | 1\" | 1"
     }
   ],
-  "tags": ["Leader"],
+  "tags": [
+    "Leader"
+  ],
   "specialRules": [
     "Dreg leader: When giving units their STM for the turn you may select 1 friendly model within 6\" of this model. That model gains 1 extra STM point. This model cannot give itself the extra STM."
   ],
@@ -37,11 +74,11 @@
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 7
+    "page": 9
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],

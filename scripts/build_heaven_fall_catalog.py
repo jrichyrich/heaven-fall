@@ -12,17 +12,20 @@ RAW_CAPTURE_DIR = Path("assets") / "raw-captures"
 SOURCE_IMAGE_DIR = Path("assets") / "source-cards"
 REPORT_FILE = "verification-report.json"
 CORE_RULE_TITLES = {"Ammo", "Cover", "Cells"}
-UNIVERSAL_STRAIN_TITLES = {"Strains", "Reroll", "Cover fire", "Chill", "Burn"}
+UNIVERSAL_STRAIN_TITLES = {"Strains", "Reroll", "Cover fire", "Chill", "Burn", "Shuffle", "Reinforcements"}
+ACTION_RULE_TITLES = {"Actions"}
+WEAPON_REFERENCE_TITLES = {"Weapons"}
 VERIFICATION_STATUSES = {"unverified", "in_review", "verified"}
 SOURCE_QUALITY_VALUES = {"poor", "fair", "good"}
 REVIEW_CHECKLIST_FIELDS = ("stats", "defense", "attacks", "tags", "rulesText")
 REQUIRED_STAT_KEYS = ("m", "w", "sv", "t", "sd", "stm")
 SOURCE_TYPES = {"image", "pdf_page"}
 CANONICAL_UNIT_NAMES = {
-    "dreg": "Dreg",
+    "lwbt-quad-gun": "LWBT Quad gun",
     "lwbt-transport": "LWBT Transport mode",
     "lwbt-heavy-weapon": "LWBT Heavy weapon",
-    "lwbt-quad-gun": "LWBT Quad gun",
+    "ammo-cache": "Ammo cache",
+    "dreg": "Dreg",
     "breaker": "Breaker",
     "mercenary": "Mercenary",
     "dreg-captain": "Dreg captain",
@@ -31,6 +34,11 @@ CANONICAL_UNIT_NAMES = {
     "champion": "Champion",
     "pistolier": "Pistolier",
     "rampager": "Rampager",
+    "shawka": "Shawka",
+    "hunter": "Hunter",
+    "scout": "Scout",
+    "keeper-of-secrets": "Keeper of secrets",
+    "light-buggy": "Light buggy",
 }
 
 
@@ -78,18 +86,38 @@ def resolve_relative_path(value: str, base_root: Path) -> Path:
     return (base_root / path).resolve()
 
 
+def validate_sections(sections: object, field_name: str, path: Path) -> list[dict]:
+    items = ensure_list(sections, field_name, path)
+    for index, section in enumerate(items):
+        if not isinstance(section, dict):
+            raise ValueError(f"{path}: {field_name}[{index}] must be an object")
+        if not str(section.get("id") or "").strip():
+            raise ValueError(f"{path}: {field_name}[{index}] is missing id")
+        if not str(section.get("title") or "").strip():
+            raise ValueError(f"{path}: {field_name}[{index}] is missing title")
+        ensure_list(section.get("body"), f"{field_name}[{index}].body", path)
+    return items
+
+
 def validate_rules_payload(payload: dict, path: Path) -> dict:
     if payload.get("schemaVersion") != SCHEMA_VERSION:
         raise ValueError(f"{path}: unsupported schemaVersion {payload.get('schemaVersion')}")
-    sections = ensure_list(payload.get("sections"), "sections", path)
-    for index, section in enumerate(sections):
-        if not isinstance(section, dict):
-            raise ValueError(f"{path}: section {index} must be an object")
-        if not str(section.get("id") or "").strip():
-            raise ValueError(f"{path}: section {index} is missing id")
-        if not str(section.get("title") or "").strip():
-            raise ValueError(f"{path}: section {index} is missing title")
-        ensure_list(section.get("body"), "body", path)
+    validate_sections(payload.get("sections"), "sections", path)
+    return payload
+
+
+def validate_factions_payload(payload: dict, path: Path) -> dict:
+    if payload.get("schemaVersion") != SCHEMA_VERSION:
+        raise ValueError(f"{path}: unsupported schemaVersion {payload.get('schemaVersion')}")
+    groups = ensure_list(payload.get("groups"), "groups", path)
+    for index, group in enumerate(groups):
+        if not isinstance(group, dict):
+            raise ValueError(f"{path}: groups[{index}] must be an object")
+        if not str(group.get("id") or "").strip():
+            raise ValueError(f"{path}: groups[{index}] is missing id")
+        if not str(group.get("title") or "").strip():
+            raise ValueError(f"{path}: groups[{index}] is missing title")
+        validate_sections(group.get("sections"), f"groups[{index}].sections", path)
     return payload
 
 
@@ -291,6 +319,11 @@ def load_rules(data_root: Path) -> dict:
     return validate_rules_payload(load_json(rules_path), rules_path)
 
 
+def load_factions(data_root: Path) -> dict:
+    factions_path = data_root / "factions.json"
+    return validate_factions_payload(load_json(factions_path), factions_path)
+
+
 def load_cards(data_root: Path, source_root: Path) -> list[dict]:
     cards_dir = data_root / "cards"
     records = []
@@ -320,6 +353,16 @@ def build_rule_groups(rules_payload: dict) -> list[dict]:
             "id": "universal-strains",
             "title": "Universal Strains",
             "sections": [section for section in sections if section["title"] in UNIVERSAL_STRAIN_TITLES],
+        },
+        {
+            "id": "actions",
+            "title": "Actions",
+            "sections": [section for section in sections if section["title"] in ACTION_RULE_TITLES],
+        },
+        {
+            "id": "weapons-reference",
+            "title": "Weapons Reference",
+            "sections": [section for section in sections if section["title"] in WEAPON_REFERENCE_TITLES],
         },
     ]
     return [group for group in grouped if group["sections"]]
@@ -419,7 +462,24 @@ def build_verification_report(normalized_units: list[dict], generated_at: str) -
     }
 
 
-def render_pdf_page(source_path: Path, page: int, target_path: Path) -> None:
+def render_pdf_page_with_pymupdf(source_path: Path, page: int, target_path: Path) -> bool:
+    try:
+        import fitz  # type: ignore
+    except ImportError:
+        return False
+
+    target_path.parent.mkdir(parents=True, exist_ok=True)
+    document = fitz.open(source_path)
+    try:
+        page_obj = document.load_page(page - 1)
+        pixmap = page_obj.get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False)
+        pixmap.save(target_path)
+    finally:
+        document.close()
+    return True
+
+
+def render_pdf_page_with_pdftoppm(source_path: Path, page: int, target_path: Path) -> None:
     target_path.parent.mkdir(parents=True, exist_ok=True)
     prefix = target_path.with_suffix("")
     try:
@@ -440,10 +500,16 @@ def render_pdf_page(source_path: Path, page: int, target_path: Path) -> None:
             text=True,
         )
     except FileNotFoundError as error:
-        raise RuntimeError("pdftoppm is required to render PDF source pages") from error
+        raise RuntimeError("pdftoppm is required to render PDF source pages when PyMuPDF is unavailable") from error
     except subprocess.CalledProcessError as error:
         stderr = error.stderr.strip() if error.stderr else ""
         raise RuntimeError(f"Failed to render PDF page {page} from {source_path}: {stderr}") from error
+
+
+def render_pdf_page(source_path: Path, page: int, target_path: Path) -> None:
+    if render_pdf_page_with_pymupdf(source_path, page, target_path):
+        return
+    render_pdf_page_with_pdftoppm(source_path, page, target_path)
 
 
 def render_source_assets(cards: list[dict], docs_root: Path) -> dict[str, str]:
@@ -468,8 +534,10 @@ def render_source_assets(cards: list[dict], docs_root: Path) -> dict[str, str]:
 
 def build_catalog(data_root: Path, docs_root: Path, source_root: Path) -> tuple[dict, dict, dict]:
     rules_payload = load_rules(data_root)
+    factions_payload = load_factions(data_root)
     cards = load_cards(data_root, source_root)
     rule_groups = build_rule_groups(rules_payload)
+    faction_groups = list(factions_payload["groups"])
     asset_index = render_source_assets(cards, docs_root)
     normalized_units = [normalize_card(card, asset_index[card["unitId"]]) for card in cards]
     generated_at = utc_now()
@@ -481,6 +549,7 @@ def build_catalog(data_root: Path, docs_root: Path, source_root: Path) -> tuple[
         "title": "Heaven Fall Card Library",
         "generatedAt": generated_at,
         "rules": rule_groups,
+        "factions": faction_groups,
         "units": normalized_units,
         "assetIndex": asset_index,
         "verificationSummary": verification_summary,
@@ -492,6 +561,8 @@ def build_catalog(data_root: Path, docs_root: Path, source_root: Path) -> tuple[
         "unitCount": len(normalized_units),
         "ruleGroupCount": len(rule_groups),
         "rulesSectionCount": sum(len(group["sections"]) for group in rule_groups),
+        "factionCount": len(faction_groups),
+        "factionSectionCount": sum(len(group["sections"]) for group in faction_groups),
         "catalogFile": "catalog.json",
         "assetsRoot": SOURCE_IMAGE_DIR.as_posix(),
         "verificationReportFile": REPORT_FILE,
@@ -507,7 +578,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--source-root",
         default=RAW_CAPTURE_DIR.as_posix(),
-        help="Path used to resolve image-based source assets for test fixtures and archived captures.",
+        help="Path used to resolve image-based source assets for fixtures and archived captures.",
     )
     return parser.parse_args()
 

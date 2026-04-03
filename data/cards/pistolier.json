@@ -5,12 +5,42 @@
   "points": 10,
   "maxPerSquad": 3,
   "stats": [
-    { "key": "m", "label": "M", "value": "7\"", "sourceText": "M 7\"" },
-    { "key": "w", "label": "W", "value": 4, "sourceText": "W 4" },
-    { "key": "sv", "label": "SV", "value": "4+", "sourceText": "SV 4+" },
-    { "key": "t", "label": "T", "value": 4, "sourceText": "T 4" },
-    { "key": "sd", "label": "SD", "value": 3, "sourceText": "SD 3" },
-    { "key": "stm", "label": "STM", "value": 2, "sourceText": "STM 2" }
+    {
+      "key": "m",
+      "label": "M",
+      "value": "7\"",
+      "sourceText": "M 7\""
+    },
+    {
+      "key": "w",
+      "label": "W",
+      "value": 4,
+      "sourceText": "W 4"
+    },
+    {
+      "key": "sv",
+      "label": "SV",
+      "value": "4+",
+      "sourceText": "SV 4+"
+    },
+    {
+      "key": "t",
+      "label": "T",
+      "value": 4,
+      "sourceText": "T 4"
+    },
+    {
+      "key": "sd",
+      "label": "SD",
+      "value": 3,
+      "sourceText": "SD 3"
+    },
+    {
+      "key": "stm",
+      "label": "STM",
+      "value": 2,
+      "sourceText": "STM 2"
+    }
   ],
   "defense": [],
   "attacks": [
@@ -59,11 +89,11 @@
   "source": {
     "type": "pdf_page",
     "file": "assets/pdf/datasheets-for-heavenfall.pdf",
-    "page": 11
+    "page": 13
   },
   "verification": {
     "status": "verified",
-    "updatedAt": "2026-04-01T00:00:00+00:00",
+    "updatedAt": "2026-04-02T00:00:00+00:00",
     "sourceQuality": "good",
     "unresolvedFields": [],
     "notes": [],
